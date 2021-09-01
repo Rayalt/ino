@@ -12,7 +12,8 @@
   "homepage": "",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "deploy": "gulp deploy"
   },
   "browserslist": [
     "> 1%",
@@ -26,6 +27,7 @@
     "del": "^5.1.0",
     "fs": "0.0.1-security",
     "get-classes-from-html": "^1.0.1",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-cheerio": "^1.0.0",
     "gulp-csso": "^4.0.1",
