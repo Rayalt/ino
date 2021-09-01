@@ -1,0 +1,13 @@
+//- Все примеси в этом файле должны начинаться c имени блока (courses-list)
+
+mixin courses-list(items)
+	.courses-list
+		each item in items
+			a.courses-list__tile.card-header(href='#')
+				h2.card-header__title!= item.title
+				p.card-header__subtitle!= item.subtitle
+				.courses-list__row
+					each rowItem in item.rowItem
+						.courses-list__row-item.card-descr
+							h3.card-descr__title!= rowItem.time
+							p.card-descr__text!= rowItem.info

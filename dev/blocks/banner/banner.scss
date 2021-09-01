@@ -1,0 +1,175 @@
+// В этом файле должны быть стили для БЭМ-блока banner, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.banner {
+	border-radius: 24px;
+	box-shadow: var(--drop-shadow-card);
+	overflow: hidden;
+	position: relative;
+	padding: 24px;
+	background: url('../img/img__blog-banner-bg.jpg') no-repeat center center;
+	@media (min-width: $screen-nexus) {
+		padding: 32px;
+	}
+	@media (min-width: $screen-sm) {
+		background: url('../img/img__blog-zubareva.png') no-repeat right bottom / 40%, url('../img/img__blog-banner-bg.jpg') no-repeat center center;
+		padding-right: 275px;
+	}
+	@media (min-width: $screen-md) {
+		background: url('../img/img__blog-zubareva.png') no-repeat right bottom, url('../img/img__blog-banner-bg.jpg') no-repeat center center;
+		padding: 48px 285px 32px 48px;
+	}
+	@media (min-width: $screen-lg) {
+		padding: 72px 285px 32px 72px;
+	}
+	&_compact {
+		@media (min-width: $screen-sm) {
+			background: url('../img/img__blog-banner-bg.jpg') no-repeat center center;
+			padding-right: 32px;
+		}
+		@media (min-width: $screen-md) {
+			background: url('../img/img__blog-zubareva.png') no-repeat right bottom / 40%, url('../img/img__blog-banner-bg.jpg') no-repeat center center;
+			padding: 48px 265px 32px 48px;
+		}
+		@media (min-width: $screen-lg) {
+			background: url('../img/img__blog-zubareva.png') no-repeat right bottom, url('../img/img__blog-banner-bg.jpg') no-repeat center center;
+			padding: 60px 304px 60px 72px;
+		}
+	}
+	&__content {
+		color: var(--color-white);
+		position: relative;
+		z-index: 3;
+		.banner_compact & {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			@media (min-width: $screen-md) {
+				min-height: 248px;
+			}
+			@media (min-width: $screen-lg) {
+				min-height: 308px;
+			}
+		}
+	}
+	&__label {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 16px;
+		}
+	}
+	&__name {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 8px 0 0 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 24px;
+		}
+	}
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 28px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 16px 0 0 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 38px;
+		}
+		@media (min-width: $screen-sm) {
+			font-size: 44px;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 68px;
+		}
+		@media (min-width: $screen-lg) {
+			font-size: 88px;
+		}
+		.banner_compact & {
+			font-size: 28px;
+			@media (min-width: $screen-nexus) {
+				margin-top: 24px;
+			}
+			@media (min-width: $screen-lg) {
+				font-size: 56px;
+			}
+		}
+	}
+	&__info {
+		margin-top: 16px;
+		@media (min-width: $screen-nexus) {
+			display: grid;
+			grid-gap: 32px;
+			margin-top: 24px;
+		}
+		@media (min-width: $screen-lg) {
+			grid-gap: 140px;
+			grid-template-columns: 66fr 25fr;
+			margin-top: 32px;
+		}
+	}
+	&__info-descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 150%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			line-height: 175%;
+		}
+		@media (min-width: $screen-lg) {
+			line-height: 200%;
+		}
+	}
+	&__sign {
+		align-self: end;
+		display: none;
+		justify-self: end;
+		max-width: 216px;
+		text-align: right;
+		@media (min-width: $screen-sm) {
+			display: block;
+		}
+		@media (min-width: $screen-lg) {
+			margin-top: 23px;
+		}
+	}
+	&__sign-name {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 200%;
+		margin: 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 20px;
+		}
+	}
+	&__sign-descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 0;
+	}
+	&__button {
+		.banner_compact & {
+			margin-top: 24px;
+			@media (min-width: $screen-nexus) {
+				margin-top: 32px;
+			}
+		}
+	}
+}

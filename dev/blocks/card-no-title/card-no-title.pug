@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-no-title)
+
+mixin card-no-title(items)
+	.card-no-title
+		each item in items
+			if item.hasIcon === true
+				.card-no-title__item
+					h2.card-no-title__label!= item.label
+					.card-no-title__wrap
+						svg.card-no-title__icon
+							use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+						p.card-no-title__text!= item.text
+			else
+				.card-no-title__item
+					h2.card-no-title__label!= item.label
+					p.card-no-title__text!= item.text

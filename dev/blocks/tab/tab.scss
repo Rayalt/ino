@@ -1,0 +1,74 @@
+// В этом файле должны быть стили для БЭМ-блока tab, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.tab {
+	background-color: var(--color-brand-pale);
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	user-select: none;
+	width: 100%;
+	@media (min-width: $screen-nexus) {
+		padding: 24px;
+		flex-direction: row;
+		align-items: center;
+	}
+	&_active {
+		background-color: var(--color-white);
+		cursor: auto;
+		transition: background-color .25s ease;
+		&:hover {
+			background-color: var(--color-white);
+		}
+		.tab__mark {
+			background-color: var(--color-brand);
+			border-radius: 50%;
+			height: 100%;
+			transition: background-color .25s ease;
+			width: 100%;
+			&:hover {
+				background-color: var(--color-brand);
+			}
+		}
+	}
+	&__fake-input {
+		border-radius: 50%;
+		border: 3px solid var(--color-brand);
+		flex-shrink: 0;
+		padding: 3px;
+		height: 20px;
+		width: 20px;
+		margin-bottom: 8px;
+		@media (min-width: $screen-nexus) {
+			height: 24px;
+			margin-bottom: 0;
+			margin-right: 16px;
+			width: 24px;
+		}
+	}
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		margin: 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 18px;
+			line-height: 133%;
+		}
+	}
+	&__descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 13px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 115%;
+		margin: 8px 0 0 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 14px;
+			margin: 0;
+		}
+	}
+}

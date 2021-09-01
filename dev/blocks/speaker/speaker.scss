@@ -1,0 +1,75 @@
+// В этом файле должны быть стили для БЭМ-блока speaker, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.speaker {
+	flex: 1 1 50%;
+	& + & {
+		margin-top: 20px;
+		@media (min-width: $screen-sm) {
+			margin-left: 32px;
+			margin-top: 0;
+		}
+	}
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		@media (min-width: $screen-nexus) {
+			flex-direction: row;
+			align-items: center;
+		}
+		@media (min-width: $screen-sm) {
+			align-items: flex-start;
+		}
+	}
+	&__avatar {
+		background: var(--color-white);
+		border-radius: 100px;
+		box-shadow: var(--drop-shadow-card);
+		flex-shrink: 0;
+		height: 104px;
+		margin-bottom: 16px;
+		overflow: hidden;
+		position: relative;
+		width: 104px;
+		@media (min-width: $screen-nexus) {
+			margin-right: 16px;
+			height: 120px;
+			width: 120px;
+		}
+	}
+	&__img {
+		height: 100%;
+		left: 50%;
+		object-fit: cover;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		width: 100%;
+	}
+	&__name {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 100%;
+		margin: 0;
+		@media (min-width: $screen-md) {
+			font-size: 20px;
+		}
+	}
+	&__descr {
+		color: var(--color-dark-secondary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 13px;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 8px 0 0 0;
+		max-width: 488px;
+		@media (min-width: $screen-nexus) {
+			font-size: 14px;
+			margin: 12px 0 0 0;
+			line-height: 133%;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+footer.footer
+	.footer__inner
+		.grid
+			.grid__row
+				.grid__col.grid__col_xs-12.grid__col_md-12
+					.footer__grid
+						.footer__grid-item
+							.footer__logo
+								svg
+									use(xlink:href='/img/svgSprite.svg#ino__logo')
+							.footer__contacts
+								+link-set([
+									{icon: 'phone', link: [
+										{href: 'tel:88432948330', text: '(843) 294-83-30'},
+										{href: 'tel:88432948332', text: '<span>(843)</span> 294-83-32'},
+										{href: 'tel:88432948337', text: '<span>(843)</span> 294-83-37'}
+									]},
+									{icon: 'mail', link: [
+										{href: 'mailto:dpo@tisbi.ru', text: 'dpo@tisbi.ru'}
+									]},
+									{icon: 'location', link: [
+										{href: '#', text: '420012, Казань, <br class="string-breaker">Муштари 13, каб. 135 и 137'}
+									]}
+								])
+						.footer__grid-item
+							.footer__socials
+								.socials
+									a.socials__link(href='#')
+										svg.socials__icon.socials__icon_tg
+											use(xlink:href='/img/svgSprite.svg#icon__socials_tg')
+									a.socials__link(href='#')
+										svg.socials__icon.socials__icon_wa
+											use(xlink:href='/img/svgSprite.svg#icon__socials_wa')
+								.footer__button
+									a.button(href='#' data-hystmodal='#ask') Задать вопрос
+						.footer__info
+							a.footer__info-link(href='#') Пользовательское соглашение
+							a.footer__info-link(href='#') Политика конфиденциальности
+							.footer__info-copy 2021 © Университет управления «ТИСБИ».
+								br.string-breaker
+								|  Все права защищены

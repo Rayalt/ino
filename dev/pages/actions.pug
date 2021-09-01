@@ -1,0 +1,85 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = false
+block meta
+	title Акции
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html', mod: 'main-nav__link_active'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html', mod: 'main-nav__link_active'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block content
+	section.section.section_alt
+		.section__inner.actions
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						h1.page-title.actions__title Акции
+						.actions__cards
+							+card-actions([
+								{
+									href: 'action.html',
+									pillColor: 'red',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'blue',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'orange',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'green',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'red',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'orange',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'green',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'red',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								}
+							])

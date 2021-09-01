@@ -1,0 +1,33 @@
+// В этом файле должны быть стили для БЭМ-блока pill, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.pill {
+	align-items: center;
+	display: flex;
+	border-radius: 12px;
+	color: var(--color-white);
+	font-feature-settings: 'pnum' on, 'lnum' on;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	line-height: 135%;
+	margin: 0;
+	padding: 4px 8px;
+	&_blue {
+		background-color: var(--color-brand);
+	}
+	&_green {
+		background-color: var(--color-green);
+	}
+	&_orange {
+		background-color: var(--color-orange);
+	}
+	&_red {
+		background-color: var(--color-red);
+	}
+	&_white {
+		background-color: var(--color-white);
+		color: var(--color-dark-primary);
+	}
+}

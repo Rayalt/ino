@@ -1,0 +1,14 @@
+//- Все примеси в этом файле должны начинаться c имени блока (team)
+
+mixin team(items)
+	.team
+		each item in items
+			.team__tile
+				if item.hasImg === false
+					.team__avatar
+				else
+					.team__avatar
+						img.team__img(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@2.jpg 2x' alt!= item.alt)
+				.team__info
+					p.team__name!= item.name
+					p.team__position!= item.position

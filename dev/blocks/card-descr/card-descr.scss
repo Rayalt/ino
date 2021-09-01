@@ -1,0 +1,23 @@
+// В этом файле должны быть стили для БЭМ-блока card-descr, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-descr {
+	&__title {
+		color: var(--color-dark-secondary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 135%;
+		margin: 0;
+	}
+	&__text {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		line-height: 115%;
+		margin: 2px 0 0 0;
+	}
+}

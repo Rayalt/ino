@@ -1,0 +1,36 @@
+// В этом файле должны быть стили для БЭМ-блока select, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.select {
+	appearance: none;
+	background-color: var(--color-white);
+	background-image: url(/img/svgSprite.svg#icon__shevron_down-view);
+	background-repeat: no-repeat;
+	background-position: right 16px center;
+	background-size: 24px 24px;
+	border-radius: 16px;
+	border: 0;
+	box-shadow: var(--drop-shadow-button);
+	color: var(--color-dark-primary);
+	cursor: pointer;
+	display: block;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	line-height: 115%;
+	margin: 0;
+	max-width: 100%;
+	outline: 0;
+	padding: 12px 40px 12px 24px;
+	transition: box-shadow .25s ease, background-color .25s ease;
+	width: 100%;
+	&::-ms-expand {
+		display: none;
+	}
+	&:hover {
+		background-color: var(--color-brand-pale);
+		box-shadow: var(--drop-shadow-button-hover);
+	}
+}

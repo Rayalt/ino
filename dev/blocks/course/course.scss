@@ -1,0 +1,160 @@
+// В этом файле должны быть стили для БЭМ-блока course, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.course {
+	&__inner {
+		padding: 40px 0 40px 0;
+		@media (min-width: $screen-sm) {
+			padding: 64px 0 56px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 64px 0 80px 0;
+		}
+	}
+	&__row + &__row {
+		margin-top: 40px;
+		@media (min-width: $screen-sm) {
+			margin-top: 64px;
+		}
+	}
+	&__cols-info {
+		display: grid;
+		grid-gap: 40px;
+		@media (min-width: $screen-sm) {
+			grid-gap: 64px;
+		}
+		@media (min-width: $screen-md) {
+			grid-gap: 32px;
+			grid-template-columns: 6fr 3fr;
+		}
+		@media (min-width: $screen-lg) {
+			grid-template-columns: 58fr 25fr;
+		}
+	}
+	&__title + &__text, &__title + &__list {
+		margin-top: 12px;
+		@media (min-width: $screen-sm) {
+			margin-top: 16px;
+		}
+	}
+	&__text + &__list {
+		margin-top: 8px;
+	}
+	&__text + &__text {
+		margin-top: 16px;
+		@media (min-width: $screen-sm) {
+			margin-top: 24px;
+		}
+	}
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 120%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 24px;
+		}
+	}
+	&__text {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 150%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 16px;
+			line-height: 200%;
+		}
+	}
+	&__list {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 135%;
+		list-style: none;
+		margin: 0;
+		padding: 0 0 0 10px;
+		@media (min-width: $screen-sm) {
+			font-size: 16px;
+			line-height: 150%;
+		}
+	}
+	&__list-item {
+		&:before {
+			color: var(--color-dark-primary);
+			content: '\2022';
+			margin-right: 10px;
+			width: 1em;
+		}
+		& + & {
+			margin-top: 8px;
+		}
+	}
+	&__side-card {}
+	&__telegram {
+		background: var(--color-card-gradient);
+		border-radius: 24px;
+		color: var(--color-white);
+		display: block;
+		padding: 16px 24px 24px 16px;
+		text-decoration: none;
+		transition: transform .25s ease, box-shadow .25s ease;
+		&:hover {
+			box-shadow: var(--drop-shadow-card-hover);
+			transform: translateY(-2px);
+		}
+		@media (min-width: $screen-sm) {
+			padding: 24px 32px 32px 24px;
+		}
+		@media (min-width: $screen-md) {
+			padding: 24px 32px 32px 32px;
+		}
+	}
+	&__telegram-header {
+		align-items: center;
+		display: flex;
+	}
+	&__telegram-icon {
+		fill: var(--color-white);
+		flex-shrink: 0;
+		height: 32px;
+		margin-right: 8px;
+		width: 32px;
+		@media (min-width: $screen-sm) {
+			height: 48px;
+			margin-right: 16px;
+			width: 48px;
+		}
+	}
+	&__telegram-title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 20px;
+		font-weight: bold;
+		letter-spacing: 0.01em;
+		line-height: 121%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 24px;
+		}
+	}
+	&__telegram-text {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: normal;
+		letter-spacing: 0.01em;
+		line-height: 150%;
+		margin: 8px 0 0 40px;
+		@media (min-width: $screen-sm) {
+			margin: 12px 0 0 64px;
+			font-size: 16px;
+		}
+		@media (min-width: $screen-md) {
+			max-width: 656px;
+		}
+	}
+}

@@ -1,0 +1,83 @@
+// В этом файле должны быть стили для БЭМ-блока incut, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.incut {
+	display: flex;
+	flex-direction: column-reverse;
+	min-height: 560px;
+	position: relative;
+	@media (min-width: $screen-md) {
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		margin-top: 16px;
+		@media (min-width: $screen-nexus) {
+			align-items: flex-start;
+			margin-top: 32px;
+		}
+		@media (min-width: $screen-md) {
+			margin-top: 24px;
+		}
+	}
+	&__heading {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 117%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 48px;
+		}
+	}
+	&__subtitle {
+		@include style-subtitle-600-20-120p-1p;
+		margin: 8px 0 0 0;
+		@media (min-width: $screen-sm) {
+			margin-top: 16px;
+		}
+	}
+	&__descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 150%;
+		margin: 16px 0 0 0;
+		@media (min-width: $screen-sm) {
+			font-size: 16px;
+			line-height: 200%;
+			margin-top: 32px;
+		}
+	}
+	&__button {
+		margin-top: 40px;
+	}
+	&__img {
+		border-radius: 48px;
+		height: auto;
+		object-fit: cover;
+		width: auto;
+		@media (min-width: $screen-sm) {
+			border-radius: 64px;
+			height: 360px;
+		}
+		@media (min-width: $screen-md) {
+			height: 560px;
+			margin: 0;
+			position: absolute;
+			right: -520px;
+			top: 0;
+			width: 487px;
+		}
+		@media (min-width: $screen-lg) {
+			border-radius: 280px;
+			right: -897px;
+			width: 864px;
+		}
+	}
+}

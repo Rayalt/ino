@@ -1,0 +1,91 @@
+// В этом файле должны быть стили для БЭМ-блока card-courses-alt, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-courses-alt {
+	background: var(--color-white);
+	border-radius: 24px;
+	box-shadow: var(--drop-shadow-card);
+	color: var(--color-dark-primary);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	text-decoration: none;
+	transition: box-shadow .25s ease, transform .25s ease;
+	@media (min-width: $screen-nexus) {
+		flex-direction: row;	
+	}
+	&:hover {
+		box-shadow: var(--drop-shadow-card-hover);
+		transform: translateY(-2px);
+	}
+	.slider & {
+		background: none;
+		box-shadow: none;
+		&:hover {
+			box-shadow: none;
+			transform: none;
+		}
+	}
+	&__cover {
+		flex: 0 0 auto;
+		height: 0;
+		overflow: hidden;
+		padding-top: 40%;
+		position: relative;
+		@media (min-width: $screen-nexus) {
+			height: auto;
+			padding-left: 45%;
+			padding-top: 0;
+			width: 0;
+		}
+		@media (min-width: $screen-sm) {
+			padding-left: 40%;
+		}
+		@media (min-width: $screen-md) {
+			padding-left: 35%;
+		}
+	}
+	&__img {
+		height: 100%;
+		left: 0;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	&__pill {
+		position: absolute;
+		right: 12px;
+		top: 12px;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 16px;
+		width: 100%;
+		@media (min-width: $screen-sm) {
+			padding: 16px 24px;
+		}
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		margin-top: 32px;
+		@media (min-width: $screen-sm) {
+			flex-direction: row;
+			margin-top: 40px;
+		}
+		@media (min-width: $screen-md) {
+			margin-top: 60px;
+		}
+	}
+	&__descr + &__descr {
+		margin-top: 16px;
+		@media (min-width: $screen-sm) {
+			margin-left: 32px;
+			margin-top: 0;
+		}
+	}
+}

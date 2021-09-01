@@ -1,0 +1,23 @@
+// В этом файле должны быть стили для БЭМ-блока card-header, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-header {
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 0;
+	}
+	&__subtitle {
+		color: var(--color-dark-secondary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 12px;
+		font-style: italic;
+		font-weight: 400;
+		line-height: 135%;
+		margin: 4px 0 0 0;
+	}
+}

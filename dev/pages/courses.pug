@@ -1,0 +1,167 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = false
+block meta
+	title Курсы
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html', mod: 'main-nav__link_active'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html', mod: 'main-nav__link_active'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block content
+	section.section.section_alt
+		.section__inner.courses
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						h1.page-title.courses__title Курсы
+						.courses__filter
+							.courses__filter-item
+								label.courses__filter-label Категория
+								+select([
+									{value: '0', option: 'Все категории'},
+									{value: '1', option: 'Государственное и муниципальное управление и сфера закупок'},
+									{value: '2', option: 'Менеджмент. Управление. Кадры'},
+									{value: '3', option: 'Экономика. Финансы. Страхование'},
+									{value: '4', option: 'Туризм. Гостиничное дело. Логистика'},
+									{value: '5', option: 'Юриспруденция'},
+									{value: '6', option: 'Социальная сфера'},
+									{value: '7', option: 'Педагогическое образование'},
+									{value: '8', option: 'Информационные технологии'},
+									{value: '9', option: 'Прочее'}
+								], 'courses__select')
+							.courses__filter-item
+								label.courses__filter-label Форма обучения
+								+select([
+									{value: '0', option: 'Все'},
+									{value: '1', option: 'Очная'},
+									{value: '2', option: 'Дистанционная'}
+								], 'courses__select')
+							.courses__filter-item
+								label.courses__filter-label Вид программы
+								+select([
+									{value: '0', option: 'Все'},
+									{value: '1', option: 'Повышение квалификации'},
+									{value: '2', option: 'Повышение квалификации'},
+									{value: '3', option: 'Профессиональное обучение'}
+								], 'courses__select')
+						.courses__section
+							h2.courses__cards-title Государственное и муниципальное управление и сфера закупок
+							.courses__cards
+								+card-courses([
+									{
+										href: 'course.html',
+										img: 'state',
+										pill: 'Дистанционное',
+										title: 'Управление государственными и муниципальными закупками',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'По мере набора группы'
+										}]
+									},
+									{
+										href: 'course_2.html?tab=1',
+										img: 'purchases',
+										pill: 'Очное',
+										title: 'Контрактная система в сфере закупок',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'В любое время'
+										}]
+									},
+									{
+										href: 'course_2.html?tab=2',
+										img: 'management',
+										pill: 'Дистанционное',
+										title: 'Контрактная система в сфере закупок',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'В любое время'
+										}]
+									},
+									{
+										href: '#',
+										img: 'investments',
+										pill: 'Очное',
+										title: 'Реализация требований ФГОС ДО и профессионального стандарта «Педагог» в деятельности воспитателя при организации основных видов деятельности детей дошкольного возраста с ОВЗ',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'В любое время'
+										}]
+									}
+								])
+						.courses__section
+							h2.courses__cards-title Экономика. Финансы. Страхование
+							.courses__cards
+								+card-courses([
+									{
+										href: 'course.html',
+										img: 'state',
+										pill: 'Дистанционное',
+										title: 'Управление государственными и муниципальными закупками',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'По мере набора группы'
+										}]
+									},
+									{
+										href: 'course_2.html?tab=1',
+										img: 'purchases',
+										pill: 'Очное',
+										title: 'Контрактная система в сфере закупок',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'В любое время'
+										}]
+									},
+									{
+										href: 'course_2.html?tab=2',
+										img: 'management',
+										pill: 'Дистанционное',
+										title: 'Контрактная система в сфере закупок',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'В любое время'
+										}]
+									}
+								])
+						.courses__section
+							h2.courses__cards-title Психология и коммуникации
+							.courses__cards
+								+card-courses([
+									{
+										href: 'course.html',
+										img: 'state',
+										pill: 'Дистанционное',
+										title: 'Управление государственными и муниципальными закупками',
+										subtitle: 'Профессиональная переподготовка',
+										row: [{time: 'Объём', info: '254 академических часа'}, {
+											time: 'Сроки обучения',
+											info: 'По мере набора группы'
+										}]
+									}
+								])

@@ -1,0 +1,71 @@
+// В этом файле должны быть стили для БЭМ-блока card-no-title, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-no-title {
+	background-color: var(--color-white);
+	border-radius: 24px;
+	border: 1px solid var(--color-brand-pale);
+	box-shadow: var(--drop-shadow-card);
+	padding: 23px;
+	position: relative;
+	z-index: 2;
+	@media (min-width: $screen-nexus) {
+		display: flex;
+		justify-content: space-between;
+	}
+	@media (min-width: $screen-md) {
+		display: block;
+	}
+	&__item {
+		@media (min-width: $screen-nexus) {
+			width: 50%;
+		}
+		@media (min-width: $screen-md) {
+			width: auto;
+		}
+		& + & {
+			margin-top: 24px;
+			@media (min-width: $screen-nexus) {
+				margin-top: 0;
+			}
+			@media (min-width: $screen-md) {
+				margin-top: 32px;
+			}
+		}
+	}
+	&__wrap{
+		display: flex;
+	}
+	&__label {
+		color: var(--color-dark-secondary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 115%;
+		margin: 0 0 8px 0;
+	}
+	&__icon {
+		fill: var(--color-brand);
+		flex-shrink: 0;
+		height: 32px;
+		margin-right: 8px;
+		width: 32px;
+	}
+	&__text {
+		color: var(--color-brand);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 100%;
+		margin: 0;
+		max-width: 272px;
+		.card-no-title__wrap & {
+			color: var(--color-dark-primary);
+			font-size: 14px;
+			line-height: 125%;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+// В этом файле должны быть стили для БЭМ-блока card-actions, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-actions {
+	display: grid;
+	grid-gap: 16px;
+	position: relative;
+	width: 100%;
+	z-index: 2;
+	@media (min-width: $screen-nexus) {
+		grid-gap: 24px;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (min-width: $screen-md) {
+		grid-gap: 32px;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	&__item {
+		background-color: var(--color-white);
+		border-radius: 24px;
+		border: 1px solid var(--color-brand-pale);
+		box-shadow: var(--drop-shadow-card);
+		color: var(--color-dark-primary);
+		display: flex;
+		flex-direction: column;
+		padding: 15px;
+		position: relative;
+		text-decoration: none;
+		transition: box-shadow .25s ease, transform .25s ease;
+		@media (min-width: $screen-sm) {
+			padding: 31px;
+		}
+		&:hover {
+			box-shadow: var(--drop-shadow-card-hover);
+			transform: translateY(-2px);
+		}
+		&_main {
+			@media (min-width: $screen-nexus) {
+				grid-column: 1 / 3;
+				grid-row: 1 / 2;
+			}
+			@media (min-width: $screen-md) {
+				grid-column: 1 / 3;
+				grid-row: 1 / 2;
+			}
+			@media (min-width: $screen-lg) {
+				grid-column: 1 / 2;
+				grid-row: 1 / 3;
+			}
+		}
+		&:nth-of-type(2) {
+			z-index: 3;
+		}
+		&:nth-of-type(3) {
+			z-index: 4;
+		}
+		&:nth-of-type(4) {
+			z-index: 5;
+		}
+		&:nth-of-type(5) {
+			z-index: 6;
+		}
+	}
+	&__pill {
+		display: flex;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+		margin-top: 16px;
+		@media (min-width: $screen-sm) {
+			margin-top: 20px;
+		}
+		.card-actions__item_main & {
+			@media (min-width: $screen-sm) {
+				margin-top: 56px;
+			}
+		}
+		
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 125%;
+		letter-spacing: 0.01em;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		margin: 0;
+		.card-actions__item_main & {
+			@media (min-width: $screen-nexus) {
+				font-size: 20px;
+			}
+			@media (min-width: $screen-sm) {
+				font-size: 24px;
+			}
+		}
+	}
+}

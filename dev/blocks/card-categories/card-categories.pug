@@ -1,0 +1,10 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-categories)
+
+mixin card-categories(items)
+	.card-categories
+		each item in items
+			a.card-categories__item(href='#')
+				h2.card-categories__title!= item.title
+				p.card-categories__info!= item.info
+				svg.card-categories__icon
+					use(xlink:href='img/svgSprite.svg#icon__sections_' + item.icon)

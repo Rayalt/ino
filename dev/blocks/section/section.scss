@@ -1,0 +1,136 @@
+// В этом файле должны быть стили для БЭМ-блока section, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.section {
+	&:nth-of-type(even) {
+		background: var(--color-brand-pale);
+		@media (min-width: $screen-sm) {
+			background: url('../img/img__lines_tv-alt.svg') repeat-y center, var(--color-brand-pale);
+		}
+		@media (min-width: $screen-md) {
+			background: url('../img/img__lines_th-alt.svg') repeat-y center, var(--color-brand-pale);
+		}
+		@media (min-width: $screen-lg) {
+			background: url('../img/img__lines_d-alt.svg') repeat-y center, var(--color-brand-pale);
+		}
+	}
+	&_alt {
+		&:nth-of-type(even) {
+			background: var(--body-bg);
+			@media (min-width: $screen-sm) {
+				background: url('../img/img__lines_tv.svg') repeat-y center, var(--body-bg);
+			}
+			@media (min-width: $screen-md) {
+				background: url('../img/img__lines_th.svg') repeat-y center, var(--body-bg);
+			}
+			@media (min-width: $screen-lg) {
+				background: url('../img/img__lines_d.svg') repeat-y center, var(--body-bg);
+			}
+		}
+		&:nth-of-type(odd) {
+			background: var(--color-brand-pale);
+			@media (min-width: $screen-sm) {
+				background: url('../img/img__lines_tv-alt.svg') repeat-y center, var(--color-brand-pale);
+			}
+			@media (min-width: $screen-md) {
+				background: url('../img/img__lines_th-alt.svg') repeat-y center, var(--color-brand-pale);
+			}
+			@media (min-width: $screen-lg) {
+				background: url('../img/img__lines_d-alt.svg') repeat-y center, var(--color-brand-pale);
+			}
+		}
+	}
+	&__anchor {
+		margin-top: -80px;
+		position: absolute;
+		@media (min-width: $screen-sm) {
+			margin-top: -148px;
+		}
+		@media (min-width: $screen-md) {
+			margin-top: -156px;
+		}
+		@media (min-width: $screen-lg) {
+			margin-top: -104px;
+		}
+	}
+	&__inner {
+		padding: 40px 0;
+		@media (min-width: $screen-sm) {
+			padding: 56px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 80px 0;
+		}
+	}
+	&__inner-incut {
+		overflow: hidden;
+		padding: 40px 0;
+		position: relative;
+	}
+	&__inner-contacts {
+		display: flex;
+		flex-direction: column;
+		padding: 40px 0 0;
+		@media (min-width: $screen-sm) {
+			padding: 64px 0;
+		}
+	}
+	&__header {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin: -4px 0;
+	}
+	&__title {
+		margin: 0;
+	}
+	&__body {
+		padding-top: 24px;
+		@media (min-width: $screen-sm) {
+			padding-top: 40px;
+		}
+	}
+	&__body-about {
+		padding-top: 16px;
+	}
+	&__button {
+		@include style-600-16-125p-1p;
+		align-items: center;
+		appearance: none;
+		background-color: var(--color-white);
+		border-radius: 32px;
+		border: none;
+		box-shadow: var(--drop-shadow-button);
+		color: var(--color-dark-primary);
+		display: flex;
+		flex-shrink: 0;
+		margin-left: 24px;
+		outline: none;
+		padding: 8px;
+		text-decoration: none;
+		transition: box-shadow .25s ease, transform .25s ease;
+		white-space: nowrap;
+		@media (min-width: $screen-sm) {
+			padding: 8px 8px 8px 24px;
+		}
+		&:hover {
+			box-shadow: var(--drop-shadow-button-hover);
+			transform: translateY(-2px);
+		}
+		span {
+			display: none;
+			@media (min-width: $screen-sm) {
+				display: block;
+			}
+		}
+	}
+	&__button-icon {
+		fill: var(--color-dark-primary);
+		height: 24px;
+		width: 24px;
+		@media (min-width: $screen-sm) {
+			margin-left: 10px;
+		}
+	}
+}

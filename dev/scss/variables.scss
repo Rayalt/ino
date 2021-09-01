@@ -1,0 +1,43 @@
+:root {
+	--font-family-base:				var(--font-family-sans);
+	--font-family-sans:				'Raleway', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	--font-family-serif:			Georgia, 'Times New Roman', Times, serif;
+
+	--color-white:					#ffffff;
+	--color-black:					#000000;
+
+	--body-bg:						#ffffff;
+	--body-color:					var(--color-dark-primary);
+
+	--font-size-root:				null;
+
+	--color-darker-tint:			rgba(0, 0, 0, .25);
+  	--color-dark-primary:			#4b4d52;
+	--color-dark-secondary:			#8d9199;
+	--color-dark-tertiary:			#a9aeb8;
+	--color-dark-quaternary:		#ced0d6;
+	--color-dark-ninja:				#e1e4eb;
+	--color-dark-ghost:				#eff1f4;
+	--color-brand:					#5286ec;
+	--color-brand-quaternary:		#b8c3da;
+	--color-brand-ninja:			#c9d2e4; /*--color-brand-light:*/
+	--color-brand-ghost: 			#e7effd; /*--color-brand-tint:*/
+	--color-brand-pale:				#f3f5fa;
+	--color-red:					#ff2047;
+	--color-green:					#3cad99;
+	--color-orange:					#f57b51;
+	--color-gradient:				linear-gradient(90deg, #91b0ed 0%, #5286ec 50%, #1a5fe8 100%);
+	--color-card-gradient:			linear-gradient(90deg, #91b0ed 0%, #5286ec 100%);
+	--color-card-gradient-rotate:	linear-gradient(180deg, #91b0ed 0%, #5286ec 100%);
+	--inner-shadow-bottom:			inset 0 -1px 0 0 var(--color-dark-ninja);
+	--inner-shadow-top:				inset 0 1px 0 0 var(--color-dark-ninja);
+	--inner-shadow-left:			inset 1px 0 0 0 var(--color-dark-ninja);
+	--drop-shadow-bottom:			0 8px 32px -32px var(--color-dark-primary);
+	--drop-shadow-nav:          	32px 0 80px -32px var(--color-dark-quaternary);
+	--drop-shadow-card:				0 32px 80px -32px var(--color-brand-ninja);
+	--drop-shadow-card-hover:		0 32px 80px -32px var(--color-brand-quaternary);
+	--drop-shadow-button:			0 32px 80px 0 var(--color-brand-ninja);
+	--drop-shadow-button-hover:		0 32px 80px 0 var(--color-brand-quaternary);
+	--drop-shadow-pagination:		0 16px 24px var(--color-brand-ninja);
+
+}

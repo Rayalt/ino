@@ -1,0 +1,68 @@
+// В этом файле должны быть стили для БЭМ-блока hero, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.hero {
+	@media (min-width: $screen-sm) {
+		text-align: center;
+	}
+	&__heading {
+		color: var(--color-brand);
+		font-size: 36px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 108%;
+		margin: 0;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		@media (min-width: $screen-sm) {
+			font-size: 46px;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 52px;
+		}
+	}
+	&__subtitle {
+		@include style-subtitle-600-20-120p-1p;
+		margin: 16px 0 0 0;
+		@media (min-width: $screen-sm) {
+			font-size: 18px;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 20px;
+		}
+	}
+	&__descr {
+		color: var(--color-dark-primary);
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 180%;
+		margin: 30px 0 0 0;
+		max-width: 640px;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		@media (min-width: $screen-sm) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 16px;
+			line-height: 200%;
+			margin: 40px auto 0;
+		}
+	}
+	&__search {
+		@include style-subtitle-600-20-120p-1p;
+		box-shadow: var(--inner-shadow-top);
+		margin-top: 40px;
+		padding-top: 40px;
+		text-align: center;
+	}
+	&__search-title {
+		@include style-subtitle-600-20-120p-1p;
+		margin: 0;
+	}
+	&__form {
+		margin-top: 16px;
+		position: relative;
+	}
+}

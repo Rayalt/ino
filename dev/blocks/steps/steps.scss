@@ -1,0 +1,73 @@
+// В этом файле должны быть стили для БЭМ-блока steps, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.steps {
+	counter-reset: number;
+	&__card {
+		align-items: center;
+		background: var(--color-white);
+		border-radius: 24px;
+		display: flex;
+		padding: 24px;
+		@media (min-width: $screen-md) {
+			padding: 32px;
+		}
+		& + & {
+			margin-top: 16px;
+		}
+	}
+	&__number {
+		align-items: center;
+		background: var(--color-brand);
+		border-radius: 50%;
+		color: var(--color-white);
+		display: flex;
+		flex-shrink: 0;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 32px;
+		font-weight: 700;
+		height: 56px;
+		justify-content: center;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 0 16px 0 0;
+		padding: 8px;
+		width: 56px;
+		@media (min-width: $screen-sm) {
+			font-size: 36px;
+			height: 64px;
+			margin-right: 24px;
+			width: 64px;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 48px;
+			height: 80px;
+			width: 80px;
+		}
+		@media (min-width: $screen-lg) {
+			margin-right: 32px;
+		}
+		&::before {
+			content: counter(number);
+			counter-increment: number;
+		}
+	}
+	&__descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 16px;
+		}
+		@media (min-width: $screen-sm) {
+			font-size: 18px;
+		}
+		@media (min-width: $screen-lg) {
+			font-size: 20px;
+		}
+	}
+}

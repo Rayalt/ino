@@ -1,0 +1,84 @@
+// В этом файле должны быть стили для БЭМ-блока card-categories, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-categories {
+	display: grid;
+	grid-auto-rows: 1fr;
+	grid-gap: 16px;
+	@media (min-width: $screen-nexus) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (min-width: $screen-sm) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 24px;
+	}
+	@media (min-width: $screen-md) {
+		grid-gap: 32px;
+	}
+	@media (min-width: $screen-lg) {
+		grid-column-gap: 32px;
+		grid-row-gap: 24px;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+	&__item {
+		background-color: var(--color-white);
+		border-radius: 24px;
+		border: 1px solid var(--color-brand-pale);
+		box-shadow: var(--drop-shadow-card);
+		color: var(--color-dark-primary);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 152px;
+		padding: 15px;
+		position: relative;
+		text-decoration: none;
+		transition: box-shadow .25s ease, transform .25s ease;
+		@media (min-width: $screen-sm) {
+			padding: 23px;
+		}
+		&:hover {
+			box-shadow: var(--drop-shadow-card-hover);
+			transform: translateY(-2px);
+		}
+		&:last-child:nth-child(3n + 1) {
+			@media (min-width: $screen-sm) {
+				grid-column: 2 / 3;
+			}
+			@media (min-width: $screen-lg) {
+				grid-column: auto;
+			}
+		}
+	}
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		margin: 0;
+		max-width: 200px;
+		z-index: 2;
+	}
+	&__info {
+		color: var(--color-dark-tertiary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 115%;
+		margin: 8px 0 0 0;
+		z-index: 2;
+	}
+	&__icon {
+		bottom: 16px;
+		fill: var(--color-dark-ghost);
+		height: 104px;
+		position: absolute;
+		right: 24px;
+		width: 104px;
+		transition: fill .25s ease;
+	}
+}

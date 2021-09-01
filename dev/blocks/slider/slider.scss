@@ -1,0 +1,71 @@
+// В этом файле должны быть стили для БЭМ-блока slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.slider {
+	position: relative;
+	&__container {
+		background: var(--color-white);
+		border-radius: 24px;
+		box-shadow: var(--drop-shadow-card);
+		overflow: hidden;
+		transition: box-shadow .25s ease, transform .25s ease;
+		&:hover {
+			box-shadow: var(--drop-shadow-card-hover);
+			transform: translateY(-2px);
+		}
+	}
+	&__wrapper {
+		display: grid;
+		grid-auto-flow: column;
+	}
+	&__card {
+		grid-auto-rows: 1fr;
+	}
+	&__pagination {
+		bottom: -32px;
+		display: grid;
+		grid-gap: 8px;
+		grid-auto-flow: column;
+		left: 50%;
+		transform: translateX(-50%);
+		@media (min-width: $screen-md) {
+			bottom: -40px;
+		}
+	}
+	&__button {
+		display: none;
+		@media (min-width: $screen-lg) {
+			display: flex;
+		}
+		&_prev {
+			@media (min-width: $screen-lg) {
+				transform: translateX(-80px);
+			}
+			&:after {
+				background-image: url(/img/svgSprite.svg#icon__shevron_right-view);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 48px 48px;
+				content: '';
+				height: 48px;
+				transform: rotate(180deg);
+				width: 48px;
+			}
+		}
+		&_next {
+			@media (min-width: $screen-lg) {
+				transform: translateX(80px);
+			}
+			&:after {
+				background-image: url(/img/svgSprite.svg#icon__shevron_right-view);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 48px 48px;
+				content: '';
+				height: 48px;
+				width: 48px;
+			}
+		}
+	}
+}

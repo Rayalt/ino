@@ -1,0 +1,13 @@
+//- Все примеси в этом файле должны начинаться c имени блока (link-set)
+
+mixin link-set(items, mod)
+	- mod = mod || ''
+	.link-set(class= mod)
+		each item in items
+			.link-set__item
+				if item.icon !== ''
+					svg.link-set__icon
+						use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+				.link-set__inner
+					each link in item.link
+						a.link-set__link(href= link.href target= link.isTarget ? '_blank' : '')!= link.text

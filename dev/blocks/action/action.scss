@@ -1,0 +1,296 @@
+// В этом файле должны быть стили для БЭМ-блока action, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.action {
+	&__inner {
+		padding: 40px 0 40px 0;
+		@media (min-width: $screen-sm) {
+			padding: 64px 0 56px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 64px 0 80px 0;
+		}
+	}
+	&__row {
+		& + & {
+			margin-top: 40px;
+			@media (min-width: $screen-sm) {
+				margin-top: 64px;
+			}
+		}
+	}
+	&__cols-info {
+		display: grid;
+		grid-gap: 40px;
+		@media (min-width: $screen-sm) {
+			grid-gap: 64px;
+		}
+		@media (min-width: $screen-md) {
+			grid-gap: 32px;
+			grid-template-columns: 6fr 3fr;
+		}
+		@media (min-width: $screen-lg) {
+			grid-template-columns: 58fr 25fr;
+		}
+	}
+	&__cols-how {
+		display: grid;
+		grid-gap: 16px;
+		@media (min-width: $screen-md) {
+			grid-gap: 32px;
+			grid-template-columns: 4fr 3fr;
+		}
+		@media (min-width: $screen-lg) {
+			grid-template-columns: 50fr 33fr;
+		}
+	}
+	&__cols-download {
+		display: grid;
+		grid-gap: 16px;
+		@media (min-width: $screen-md) {
+			grid-gap: 32px;
+			grid-template-columns: 3fr 4fr;
+		}
+		@media (min-width: $screen-lg) {
+			grid-template-columns: 33fr 50fr;
+		}
+	}
+	&__title + &__text {
+		margin-top: 12px;
+		@media (min-width: $screen-sm) {
+			margin-top: 16px;
+		}
+	}
+	&__title + &__list {
+		margin-top: 12px;
+		@media (min-width: $screen-sm) {
+			margin-top: 16px;
+		}
+	}
+	&__title + &__cols-how {
+		margin-top: 12px;
+		@media (min-width: $screen-sm) {
+			margin-top: 16px;
+		}
+	}
+	&__title + &__cols-download {
+		margin-top: 12px;
+		@media (min-width: $screen-sm) {
+			margin-top: 16px;
+		}
+	}
+	&__text + &__list {
+		margin-top: 8px;
+	}
+	&__text + &__text {
+		margin-top: 16px;
+		@media (min-width: $screen-sm) {
+			margin-top: 24px;
+		}
+	}
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 120%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 24px;
+		}
+	}
+	&__text {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 150%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 16px;
+			line-height: 200%;
+		}
+	}
+	&__list {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 135%;
+		list-style: none;
+		margin: 0;
+		padding: 0 0 0 10px;
+		@media (min-width: $screen-sm) {
+			font-size: 16px;
+			line-height: 150%;
+		}
+	}
+	&__list-item {
+		&:before {
+			color: var(--color-dark-primary);
+			content: '\2022';
+			margin-right: 10px;
+			width: 1em;
+		}
+		& + & {
+			margin-top: 8px;
+		}
+	}
+	&__side-card {}
+	&__bonus {
+		background: var(--color-white);
+		border-radius: 24px;
+		box-shadow: var(--drop-shadow-card);
+		display: flex;
+		padding: 16px;
+		@media (min-width: $screen-nexus) {
+			padding: 24px;
+		}
+		@media (min-width: $screen-md) {
+			padding: 24px 32px 32px;
+		}
+	}
+	&__bonus-icon {
+		fill: var(--color-red);
+		flex-shrink: 0;
+		height: 40px;
+		margin-right: 12px;
+		width: 40px;
+		@media (min-width: $screen-nexus) {
+			height: 48px;
+			margin-right: 16px;
+			width: 48px;
+		}
+	}
+	&__bonus-wrap {}
+	&__bonus-title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 100%;
+		margin: 8px 0 0 0;
+		@media (min-width: $screen-sm) {
+			font-size: 24px;
+			margin: 12px 0 0 0;
+		}
+	}
+	&__bonus-descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 135%;
+		margin: 8px 0 0 0;
+		@media (min-width: $screen-sm) {
+			font-size: 16px;
+			line-height: 150%;
+			margin: 12px 0 0 0;
+		}
+	}
+	&__steps {}
+	&__form {
+		background: var(--color-white);
+		border-radius: 32px;
+		box-shadow: var(--drop-shadow-card);
+		flex-shrink: 0;
+		padding: 22px;
+		@media (min-width: $screen-nexus) {
+			padding: 24px;
+		}
+		@media (min-width: $screen-sm) {
+			padding: 32px;
+		}
+	}
+	&__form-grid {
+		display: grid;
+		grid-gap: 16px;
+		@media (min-width: $screen-nexus) {
+			grid-gap: 24px;
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (min-width: $screen-md) {
+			grid-gap: 16px;
+			grid-template-columns: 1fr;
+		}
+	}
+	&__form-button {
+		display: flex;
+		justify-content: center;
+		margin-top: 32px;
+		@media (min-width: $screen-sm) {
+			margin-top: 40px;
+		}
+	}
+	&__video {}
+	&__documents {}
+	&__sertificate {
+		align-items: flex-start;
+		background: var(--color-white);
+		border-radius: 24px;
+		box-shadow: var(--drop-shadow-card);
+		display: flex;
+		flex-direction: column;
+		padding: 24px;
+		@media (min-width: $screen-md) {
+			padding: 32px 40px;
+		}
+	}
+	&__sertificate-wrap {
+		align-items: center;
+		display: flex;
+	}
+	&__sertificate-icon {
+		fill: var(--color-brand);
+		flex-shrink: 0;
+		height: 32px;
+		margin-right: 8px;
+		width: 32px;
+		@media (min-width: $screen-sm) {
+			height: 40px;
+			width: 40px;
+		}
+		@media (min-width: $screen-md) {
+			height: 48px;
+			width: 48px;
+		}
+	}
+	&__sertificate-descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 135%;
+		margin: 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 16px;
+			line-height: 125%;
+		}
+	}
+	&__sertificate-button {
+		margin-top: 24px;
+	}
+	&__info {
+		@include style-500-14-115p-1p;
+		color: var(--color-dark-secondary);
+		display: inline-block;
+		font-size: 12px;
+		line-height: 150%;
+		margin-top: 16px;
+		@media (min-width: $screen-nexus) {
+			margin-top: 24px;
+		}
+	}
+	&__link {
+		@include style-500-14-115p-1p;
+		box-shadow: inset 0 -1px 0 var(--color-dark-primary);
+		color: var(--color-dark-primary);
+		font-size: 12px;
+		text-decoration: none;
+		transition: box-shadow .25s ease;
+		&:hover {
+			box-shadow: none;
+		}
+	}
+}

@@ -1,0 +1,79 @@
+// В этом файле должны быть стили для БЭМ-блока blog, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.blog {
+	&__grid {
+		display: grid;
+		grid-gap: 32px;
+		@media (min-width: $screen-nexus) {
+			grid-template-columns: 2fr 1fr;
+		}
+		@media (min-width: $screen-md) {
+			grid-template-columns: 10fr 5fr;
+		}
+		@media (min-width: $screen-lg) {
+			grid-template-columns: 69fr 33fr;
+		}
+	}
+	&__title {
+		margin: 0;
+	}
+	&__rubrics {
+		@media (min-width: $screen-nexus) {
+			padding: 16px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 24px;
+		}
+		@media (min-width: $screen-lg) {
+			padding: 40px;
+		}
+	}
+	&__rubrics-title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 120%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 20px;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 24px;
+		}
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		margin: 16px 0 0 0;
+		padding: 0;
+		@media (min-width: $screen-md) {
+			margin-top: 24px;
+		}
+	}
+	&__list-item + &__list-item {
+		margin-top: 12px;
+		@media (min-width: $screen-md) {
+			margin-top: 16px;
+		}
+	}
+	&__list-link {
+		color: var(--color-brand);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 120%;
+		text-decoration: none;
+		transition: color .25s ease;
+		@media (min-width: $screen-md) {
+			font-size: 16px;
+		}
+		&:hover {
+			color: var(--color-dark-primary);
+		}
+	}
+}

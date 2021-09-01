@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header-body)
+
+mixin header-body(items)
+	each item in items
+		.header-body__content
+			h1.page-title.page-title_white.header-body__title!= item.title
+			if item.hasIcon === true
+				.header-body__descr
+					svg.header-body__icon
+						use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+					p.header-body__text!= item.descr
+			else
+				p.header-body__text!= item.descr
+		picture
+			source(media='(max-width: 799px)' srcset='img/img__' + item.img + '_@1.jpg 800w')
+			source(media='(min-width: 800px)' srcset='img/img__' + item.img + '_@2.jpg 1920w')
+			img.header-body__bg(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@1.jpg 800w, img/img__' + item.img + '_@2.jpg 1920w' alt!= item.alt)

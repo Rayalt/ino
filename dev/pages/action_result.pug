@@ -1,0 +1,91 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = false
+block meta
+	title Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block content
+	section.section.header-body
+		.header-body__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+						+header-body([
+							{
+								title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразо&shy;вательной школе',
+								descr: 'Видео-лекция',
+								hasIcon: true,
+								icon: 'video',
+								img: 'action-1'
+							}
+						])
+	section.section
+		.grid
+			.grid__row
+				.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+					.card-titled-shift
+						.card-titled-shift__inner
+							+card-titled('Эксперт:')
+								+speaker([
+									{
+										hasImg: true,
+										img: 'idiatullin',
+										name: '<strong>Идиатуллин</strong> Артур Вагизович',
+										descr: 'кандидат исторических наук, доцент, руководитель программ профессионального развития работников образования ИНО УВО «Университет управления «ТИСБИ»'
+									}
+								])
+	section.section.section_alt.action
+		.action__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+						.action__row
+							.video
+								.video__clip
+									iframe(src='https://www.youtube.com/embed/Axmg1E4HrVE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+						.action__row
+							h2.action__title Скачать
+							.action__cols-download
+								.action__documents
+									+doc-tile([
+										{
+											href: '#',
+											title: 'Шаблон локального акта № 01',
+											descr: 'Описание документа',
+											imgs: ''
+										},
+										{
+											href: '#',
+											title: 'Шаблон локального акта № 02',
+											descr: 'Описание документа',
+											imgs: ''
+										}
+									])
+								.action__sertificate
+									.action__sertificate-wrap
+										svg.action__sertificate-icon
+											use(xlink:href='img/svgSprite.svg#icon__diploma')
+										p.action__sertificate-descr Сертификат установленного образца в электронной форме
+									.action__sertificate-button
+										a.button(href='#' download) Скачать сертификат

@@ -1,0 +1,18 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-courses-alt)
+
+mixin card-courses-alt(items)
+	each item in items
+		a.card-courses-alt(href= item.href class= item.isSlide ? 'swiper-slide slider__card':'')
+			.card-courses-alt__cover
+				img.card-courses-alt__img(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@2.jpg 2x' alt!= item.img)
+				.card-courses-alt__pill
+					p.pill.pill_white!= item.pill
+			.card-courses-alt__content
+				.card-courses-alt__header.card-header
+					h2.card-header__title!= item.title
+					p.card-header__subtitle!= item.subtitle
+				.card-courses-alt__body
+					each row in item.row
+						.card-descr.card-courses-alt__descr
+							h3.card-descr__title!= row.time
+							p.card-descr__text!= row.info

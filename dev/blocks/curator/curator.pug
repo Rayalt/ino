@@ -1,0 +1,13 @@
+//- Все примеси в этом файле должны начинаться c имени блока (curator)
+
+mixin curator(items)
+	each item in items
+		.curator
+			.curator__avatar
+				img.curator__img(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@2.jpg 2x' alt= item.lastName + ' ' + item.firstName)
+			.curator__info
+				p.curator__name 
+					strong!= item.lastName
+					span!= item.firstName
+				.curator__phone
+					block

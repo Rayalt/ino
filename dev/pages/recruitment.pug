@@ -1,0 +1,111 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = false
+block meta
+	title Набор
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html', mod: 'main-nav__link_active'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html', mod: 'main-nav__link_active'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block content
+	section.section.section_alt.recruitment
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						h1.recruitment__title.page-title Набор
+						.section__body
+							.recruitment__cards
+								+card-apply([
+									{
+										href: 'course.html',
+										labelTitle: 'Сроки обучения',
+										labelColor: 'blue',
+										labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+										title: 'Управление государственными и муниципальными закупками',
+										subtitle: 'Профессиональная переподготовка',
+										time: 'Объём',
+										info: '254 академических часа'
+									},
+									{
+										href: 'course_2.html',
+										labelTitle: 'Сроки обучения',
+										labelColor: 'red',
+										labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+										title: 'Контрактная система в сфере закупок',
+										subtitle: 'Профессиональная переподготовка',
+										time: 'Объём',
+										info: '254 академических часа'
+									},
+									{
+										href: '#',
+										labelTitle: 'Сроки обучения',
+										labelColor: 'green',
+										labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+										title: 'Менеджмент в образовании',
+										subtitle: 'Профессиональная переподготовка',
+										time: 'Объём',
+										info: '254 академических часа'
+									},
+									{
+										href: '#',
+										labelTitle: 'Сроки обучения',
+										labelColor: 'orange',
+										labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+										title: 'Управление инвестиционными проектами на предприятии',
+										subtitle: 'Профессиональная переподготовка',
+										time: 'Объём',
+										info: '254 академических часа'
+									}
+								])
+							.recruitment__cards
+								+card-apply([
+									{
+										href: '#',
+										labelTitle: 'Сроки обучения',
+										labelColor: 'orange',
+										labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+										title: 'Управление государственными и муниципальными закупками',
+										subtitle: 'Профессиональная переподготовка',
+										time: 'Объём',
+										info: '254 академических часа'
+									},
+									{
+										href: '#',
+										labelTitle: 'Сроки обучения',
+										labelColor: 'green',
+										labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+										title: 'Контрактная система в сфере закупок',
+										subtitle: 'Профессиональная переподготовка',
+										time: 'Объём',
+										info: '254 академических часа'
+									},
+									{
+										href: '#',
+										labelTitle: 'Сроки обучения',
+										labelColor: 'blue',
+										labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+										title: 'Менеджмент в образовании',
+										subtitle: 'Профессиональная переподготовка',
+										time: 'Объём',
+										info: '254 академических часа'
+									}
+								])

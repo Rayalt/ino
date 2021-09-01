@@ -1,0 +1,8 @@
+//- Все примеси в этом файле должны начинаться c имени блока (steps)
+
+mixin steps(items)
+	.steps
+		each item in items
+			.steps__card
+				p.steps__number
+				p.steps__descr!= item.descr

@@ -1,0 +1,77 @@
+// В этом файле должны быть стили для БЭМ-блока header-body-alt, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-body-alt {
+	background-color: var(--color-darker-tint);
+	position: relative;
+	&__inner {
+		padding: 40px 0;
+		@media (min-width: $screen-sm) {
+			padding: 56px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 96px 0 80px 0;
+		}
+	}
+	&__content {
+		align-items: flex-start;
+		color: var(--color-white);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		@media (min-width: $screen-lg) {
+			min-height: 248px;
+		}
+	}
+	&__title {
+		font-size: 28px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 120%;
+		margin: 12px 0 0 0;
+		max-width: 350px;
+		@media (min-width: $screen-sm) {
+			font-size: 38px;
+			max-width: 500px;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 48px;
+			max-width: 750px;
+		}
+		@media (min-width: $screen-lg) {
+			font-size: 56px;
+		}
+	}
+	&__author {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 13px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 115%;
+		margin: 24px 0 0 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 14px;
+			margin-top: 32px;	
+		}
+	}
+	&__name {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 125%;
+		margin: 4px 0 0 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 16px;
+		}
+	}
+	&__bg {
+		height: 100%;
+		left: 0;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+}

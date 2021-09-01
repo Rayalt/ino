@@ -1,0 +1,204 @@
+extends ../pug/layout_default.pug
+block meta
+	title О нас
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html', mod: 'main-nav__link_active'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: '#contacts'}
+	])
+	
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html', mod: 'main-nav__link_active'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: '#contacts'}
+	])
+
+	
+block content
+	section.section.about
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+						h1.page-title.about__title О нас
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_sm-10.grid__col_md-7.grid__col_lg-6.col-offset__lg-1
+						p.about__descr Институт непрерывного образования — структурное подразделение Университета управления «ТИСБИ». У нас получают качественное дополнительное образование жители Казани, Республики Татарстан и России.
+						+citation([
+							{
+								cite: 'http://www.consultant.ru/document/cons_doc_LAW_140174/18ecc06c654c0f2e1ffdf7fa3f8c1ef137f01615/',
+								citation: 'Дополнительное профессиональное образование направлено на удовлетворение образовательных и профессиональных потребностей, профессиональное развитие человека, обеспечение соответствия его квалификации меняющимся условиям профессиональной деятельности и социальной среды',
+								sign: '— Ст. 76 Федерального закона № 273-ФЗ «Об образовании в Российской Федерации»'
+							},
+							{
+								cite: 'http://www.consultant.ru/document/cons_doc_LAW_140174/a799ae28fec7ae204d01fada881abb439d6fa486/',
+								citation: 'Организации, осуществляющие образовательную деятельность, осуществляют образовательную деятельность на основании лицензий на осуществление образовательной деятельности … лицензия на осуществление образовательной деятельности имеет приложение, являющееся её неотъемлемой частью',
+								sign: '— Ст. 108 Федерального закона № 273-ФЗ «Об образовании в Российской Федерации»'
+							}
+						])
+						+doc-tile([
+							{
+								hasImg: true,
+								href: '#',
+								title: 'Лицензия УВО «Университет управления «ТИСБИ» на осуществление образовательной деятельности',
+								descr: 'С приложением',
+								imgs: [{img: 'license-p1', alt: ''}, {img: 'license-p2', alt: ''}, {img: 'license-p3', alt: ''}]
+							}
+						], 'doc-tile_main')
+					.grid__col.grid__col_xs-12.grid__col_sm-10.grid__col_md-5.grid__col_lg-4
+						.about__logo
+							svg
+								use(xlink:href='/img/svgSprite.svg#ino__logo')
+						+doc-tile([
+							{
+								href: '#',
+								title: 'Положение об Институте непрерывного образования',
+								descr: 'Описание документа',
+								imgs: ''
+							},
+							{
+								href: '#',
+								title: 'Короткое название документа',
+								descr: 'Описание документа',
+								imgs: ''
+							},
+							{
+								href: '#',
+								title: 'Очень длинное название документа, в несколько строк',
+								descr: 'Описание документа',
+								imgs: ''
+							},
+							{
+								href: '#',
+								title: 'Ну прям совсем очень длинное название документа, в несколько строк, которые всё тянутся и тянутся и не заканчиваются',
+								descr: 'Описание документа',
+								imgs: ''
+							}
+						])
+	section.section
+		.grid
+			.grid__row
+				.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+					.section__inner
+						h2.section-title.section__title Наши преимущества
+						.section__body
+							+advantages([
+								{
+									title: 'Качество подготовки',
+									descr: 'Образовательная деятельность ИНО осуществляется в соответствии с действующей лицензией университета (№ 2168 от 31.05.2016 г.). Образовательные программы соответствуют утвержденным профессиональным стандартам'
+								},
+								{
+									title: 'Социальное партнерство',
+									descr: 'Профессиональная переподготовка и повышение квалификации кадров реализуются в социальном партнерстве с государственными структурами, бизнес-сообществом и общественными организациями'
+								},
+								{
+									title: 'Непрерывность образования',
+									descr: 'Мы придерживаемся принципов непрерывности образования: образовательные программы направлены на всестороннее развитие личности, повышение социальной мобильности и востребованности на рынке труда'
+								},
+								{
+									title: 'Инновации в обучении',
+									descr: 'Современные технологии: личностно-ориентированный подход, модульное обучение, использование дистанционных технологий, компетентностная модель, ориентация на обучение слушателей в соответствии с утвержденными профессиональными стандартами.'
+								},
+								{
+									title: 'Востребованность на рынке',
+									descr: 'Образовательные программы планируются исходя из востребованности на рынке труда, руководствуясь спросом заказчика'
+								}
+							])
+	section.section
+		.grid
+			.grid__row
+				.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+					.section__inner
+						h2.section-title.section__title Наша команда
+						.section__body
+							+team([
+								{
+									img: 'doronina',
+									alt: 'Доронина Наталья Анатольевна',
+									name: '<b>Доронина</b><br>Наталья Анатольевна',
+									position: 'директор'
+								},
+								{
+									img: 'gabidullova',
+									alt: 'Габидуллова Регина Робертовна',
+									name: '<b>Габидуллова</b><br>Регина Робертовна',
+									position: 'заместитель директора'
+								},
+								{
+									img: 'idiatullin',
+									alt: 'Идиатуллин Артур Вагизович',
+									name: '<b>Идиатуллин</b><br>Артур Вагизович',
+									position: 'канд. ист. наук, руководитель программ профессионального развития работников образования'
+								},
+								{
+									hasImg: false,
+									alt: 'Жемкова Ольга Александровна',
+									name: '<b>Жемкова</b><br>Ольга Александровна',
+									position: 'заведующий отделением бизнес-образования'
+								},
+								{
+									img: 'nogumanova',
+									alt: 'Ногуманова Альбина Робертовна',
+									name: '<b>Ногуманова</b><br>Альбина Робертовна',
+									position: 'заведующий отделением по подготовке специалистов в сфере услуг'
+								},
+								{
+									img: 'sokolova',
+									alt: 'Соколова Фарида Киямовна',
+									name: '<b>Соколова</b><br>Фарида Киямовна',
+									position: 'заведующий отделением по подготовке специалистов в сфере гос.закупок'
+								},
+								{
+									img: 'timofeeva',
+									alt: 'Тимофеева Евгения Святославовна',
+									name: '<b>Тимофеева</b><br>Евгения Святославовна',
+									position: 'заведующий отделением дистанционного образования'
+								},
+								{
+									img: 'grishkina',
+									alt: 'Гришкина Светлана Борисовна',
+									name: '<b>Гришкина</b><br>Светлана Борисовна',
+									position: 'канд. техн. наук, специалист по учебно-методической работе'
+								},
+								{
+									img: 'gruzkova',
+									alt: 'Грузкова Светлана Юрьевна',
+									name: '<b>Грузкова</b><br>Светлана Юрьевна',
+									position: 'канд. техн. наук, менеджер'
+								}
+							])
+	section.section
+		#contacts.section__anchor
+		.section__inner-contacts.contacts
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.col-order__xs-2.grid__col_md-7.grid__col_lg-6.col-offset__lg-1
+						.contacts__map
+					.grid__col.grid__col_xs-12.grid__col_md-5.col-order__md-3.grid__col_lg-4.col-offset__lg-1
+						h2.section-title.contacts__title Контакты
+						.contacts__link-set.contacts__link-set_phone
+							+link-set([
+								{icon: 'phone', link: [
+									{href: 'tel:88432948330', text: '(843) 294-83-30'},
+									{href: 'tel:88432948332', text: '<span>(843)</span> 294-83-32'},
+									{href: 'tel:88432948337', text: '<span>(843)</span> 294-83-37'}
+								]}
+							], 'link-set_white')
+						.contacts__link-set
+							+link-set([
+								{icon: 'location', link: [
+									{href: '#', text: '420012, Казань, <br class="string-breaker">Муштари 13, каб. 135 и 137'}
+								]},
+								{icon: 'mail', link: [
+									{href: 'mailto:dpo@tisbi.ru', text: 'dpo@tisbi.ru'}
+								]}
+							], 'link-set_white')

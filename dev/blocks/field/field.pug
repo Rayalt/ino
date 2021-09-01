@@ -1,0 +1,15 @@
+//- Все примеси в этом файле должны начинаться c имени блока (field)
+
+mixin field(items)
+	each item in items
+		.field
+			label.field__label!= item.label
+			.input.field__input
+				if item.required === true && item.type === 'tel'
+					input.input__data(placeholder= item.placeholder type= item.type value= item.value required data-mask-tel)
+				else if item.required === true && item.type === 'email'
+					input.input__data(placeholder= item.placeholder type= item.type value= item.value pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required)
+				else if item.required === true
+					input.input__data(placeholder= item.placeholder type= item.type value= item.value required)
+				else
+					input.input__data(placeholder= item.placeholder type= item.type value= item.value)

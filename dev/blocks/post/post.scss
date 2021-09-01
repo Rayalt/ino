@@ -1,0 +1,281 @@
+// В этом файле должны быть стили для БЭМ-блока post, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.post {
+	&__content > {
+		h2 {
+			font-size: 24px;
+			font-weight: 700;
+			letter-spacing: 0.01em;
+			line-height: 120%;
+			margin: 0;
+			@media (min-width: $screen-sm) {
+				font-size: 40px;
+			}
+		}
+		h3 {
+			font-size: 20px;
+			font-weight: 700;
+			letter-spacing: 0.01em;
+			line-height: 120%;
+			margin: 0;
+			@media (min-width: $screen-sm) {
+				font-size: 32px;
+			}
+		}
+		p {
+			font-feature-settings: 'pnum' on, 'lnum' on;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 0.01em;
+			line-height: 175%;
+			margin: 0;
+			@media (min-width: $screen-sm) {
+				font-size: 16px;
+			}
+			@media (min-width: $screen-md) {
+				font-size: 20px;
+			}
+			&:first-of-type {
+				font-feature-settings: 'pnum' on, 'lnum' on;
+				font-size: 16px;
+				font-weight: 300;
+				letter-spacing: 0.01em;
+				line-height: 175%;
+				margin: 0;
+				@media (min-width: $screen-sm) {
+					font-size: 18px;
+				}
+				@media (min-width: $screen-md) {
+					font-size: 24px;
+				}
+			}
+			img {
+				border-radius: 8px;
+				display: block;
+				margin: 32px 0;
+				max-height: 720px;
+				object-fit: contain;
+				width: 100%;
+				@media (min-width: $screen-nexus) {
+					margin: 40px 0;
+				}
+				@media (min-width: $screen-sm) {
+					margin: 56px 0;
+				}
+			}
+			a {
+				color: var(--color-brand);
+				font-weight: 700;
+				text-decoration: underline;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		ul {
+			font-feature-settings: 'pnum' on, 'lnum' on;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 0.01em;
+			line-height: 175%;
+			list-style: none;
+			margin: 0;
+			padding: 0 0 0 28px;
+			position: relative;
+			@media (min-width: $screen-sm) {
+				font-size: 16px;
+			}
+			@media (min-width: $screen-md) {
+				font-size: 20px;
+			}
+			li:before {
+				color: var(--color-dark-primary);
+				content: '\2022';
+				position: absolute;
+				transform: translateX(-16px);
+				width: 1em;
+			}
+		}
+		ol {
+			counter-reset: ol;
+			font-feature-settings: 'pnum' on, 'lnum' on;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 0.01em;
+			line-height: 175%;
+			list-style: none;
+			margin: 0;
+			padding: 0 0 0 28px;
+			position: relative;
+			@media (min-width: $screen-sm) {
+				font-size: 16px;
+			}
+			@media (min-width: $screen-md) {
+				font-size: 20px;
+			}
+			li:before {
+				color: var(--color-dark-primary);
+				content: counter(ol) '.';
+				counter-increment: ol;
+				font-size: 12px;
+				position: absolute;
+				text-align: right;
+				transform: translateX(-31px);
+				width: 25px;
+				@media (min-width: $screen-sm) {
+					font-size: 14px;
+				}
+				@media (min-width: $screen-md) {
+					font-size: 18px;
+				}
+			}
+		}
+		blockquote {
+			background: var(--color-dark-ghost);
+			border-radius: 16px;
+			margin: 0;
+			padding: 24px;
+			@media (min-width: $screen-nexus) {
+				padding: 24px 56px;
+			}
+			@media (min-width: $screen-sm) {
+				padding: 32px 88px;
+			}
+			@media (min-width: $screen-md) {
+				padding: 56px 132px;
+			}
+			p {
+				font-feature-settings: 'pnum' on, 'lnum' on;
+				font-size: 16px;
+				font-weight: 400;
+				letter-spacing: 0.01em;
+				line-height: 150%;
+				margin: 0;
+				text-align: center;
+				@media (min-width: $screen-sm) {
+					font-size: 18px;
+				}
+				@media (min-width: $screen-md) {
+					font-size: 24px;
+				}
+			}
+			cite {
+				display: block;
+				font-feature-settings: 'pnum' on, 'lnum' on;
+				font-size: 13px;
+				font-style: normal;
+				font-weight: 400;
+				letter-spacing: 0.01em;
+				line-height: 150%;
+				margin-top: 48px;
+				position: relative;
+				text-align: center;
+				@media (min-width: $screen-sm) {
+					font-size: 14px;
+					margin-top: 56px;
+				}
+				@media (min-width: $screen-md) {
+					font-size: 16px;
+				}
+				&::before {
+					background: var(--color-dark-quaternary);
+					border-radius: 2px;
+					content: '';
+					height: 2px;
+					left: 50%;
+					position: absolute;
+					top: -26px;
+					transform: translateX(-50%);
+					width: 160px;
+				}
+			}
+		}
+		a {
+			color: var(--color-brand);
+			font-weight: 700;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		p + p, ul + p, h3 + p, h3 + ul, ul + ul, h3 + ol, ol + ol, ul + ol, ol + ul, ol + p {
+			margin-top: 16px;
+			@media (min-width: $screen-sm) {
+				margin-top: 24px;
+			}
+		}
+		h2 + p, h2 + ul {
+			margin-top: 24px;
+			@media (min-width: $screen-sm) {
+				margin-top: 32px;
+			}
+		}
+		p + ul, p + ol {
+			margin-top: 8px;
+		}
+		p + h2, p + h3, p + blockquote, blockquote + p, h2 + blockquote, blockquote + h2, h3 + blockquote, blockquote + h3, ul + blockquote, blockquote + ul {
+			margin-top: 32px;
+			@media (min-width: $screen-nexus) {
+				margin-top: 40px;
+			}
+			@media (min-width: $screen-sm) {
+				margin-top: 56px;
+			}
+		}
+	}
+	&__content {
+		.post__incut {
+			background: var(--color-dark-ghost);
+			border-radius: 16px;
+			font-feature-settings: 'pnum' on, 'lnum' on;
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: 0.01em;
+			line-height: 150%;
+			margin: 32px 0;
+			padding: 24px;
+			text-align: center;
+			@media (min-width: $screen-nexus) {
+				margin: 40px 0;
+				padding: 24px 56px;
+			}
+			@media (min-width: $screen-sm) {
+				font-size: 18px;
+				padding: 32px 88px;
+			}
+			@media (min-width: $screen-md) {
+				font-size: 24px;
+				padding: 56px 132px;
+			}
+		}
+		.post__slider:last-child {
+			margin-bottom: 32px;
+			@media (min-width: $screen-md) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+	&__card {
+		margin: 24px 0 32px 0;
+		@media (min-width: $screen-nexus) {
+			margin: 32px 0 40px 0;
+		}
+		@media (min-width: $screen-sm) {
+			margin: 40px 0 56px 0;
+		}
+	}
+	&__slider {
+		margin: 24px 0 64px 0;
+		@media (min-width: $screen-nexus) {
+			margin: 32px 0 64px 0;
+		}
+		@media (min-width: $screen-sm) {
+			margin: 40px 0 80px 0;
+		}
+		@media (min-width: $screen-md) {
+			margin: 40px 0 96px 0;
+		}
+	}
+}

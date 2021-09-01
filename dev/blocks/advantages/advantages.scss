@@ -1,0 +1,43 @@
+// В этом файле должны быть стили для БЭМ-блока advantages, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.advantages {
+	display: grid;
+	grid-gap: 16px;
+	@media (min-width: $screen-sm) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 32px;
+	}
+	&__tile {
+		background: var(--color-white);
+		border-radius: 16px;
+		padding: 16px;
+		@media (min-width: $screen-sm) {
+			padding: 32px;
+		}
+	}
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 120%;
+		margin: 0;
+		@media (min-width: $screen-sm) {
+			font-size: 20px;
+		}
+	}
+	&__descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 150%;
+		margin: 8px 0 0 0;
+		@media (min-width: $screen-sm) {
+			line-height: 172%;
+			margin: 12px 0 0 0;
+		}
+	}
+}

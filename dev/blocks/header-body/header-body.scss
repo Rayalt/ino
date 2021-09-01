@@ -1,0 +1,73 @@
+// В этом файле должны быть стили для БЭМ-блока header-body, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-body {
+	background-color: var(--color-darker-tint);
+	position: relative;
+	&__inner {
+		padding: 56px 0 144px 0;
+		@media (min-width: $screen-sm) {
+			padding: 56px 0 164px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 96px 0 164px 0;
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		min-height: 120px;
+		@media (min-width: $screen-sm) {
+			min-height: 144px;
+		}
+		@media (min-width: $screen-lg) {
+			min-height: 220px;
+		}
+	}
+	&__title {
+		margin: 0;
+	}
+	&__descr {
+		display: flex;
+		align-items: center;
+		margin-top: 20px;
+		margin-bottom: -4px;
+	}
+	&__icon {
+		fill: var(--color-white);
+		flex-shrink: 0;
+		height: 24px;
+		width: 24px;
+		margin-right: 16px;
+	}
+	&__text {
+		color: var(--color-white);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-style: italic;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		line-height: 135%;
+		margin: 24px 0 0 0;
+		@media (min-width: $screen-sm) {
+			font-size: 16px;
+		}
+		@media (min-width: $screen-md) {
+			line-height: 100%;
+		}
+		.header-body__descr & {
+			margin: 0;
+		}
+	}
+	&__bg {
+		height: 100%;
+		left: 0;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+}

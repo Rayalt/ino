@@ -1,0 +1,45 @@
+// В этом файле должны быть стили для БЭМ-блока card-titled, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-titled {
+	background-color: var(--color-white);
+	border-radius: 24px;
+	border: 1px solid var(--color-brand-pale);
+	box-shadow: var(--drop-shadow-card);
+	padding: 23px;
+	position: relative;
+	z-index: 2;
+	.card-titled-shift__inner & {
+		@media (min-width: $screen-md) {
+			padding: 31px 39px 39px;
+		}
+	}
+	&__body {
+		margin-top: 12px;
+		@media (min-width: $screen-sm) {
+			margin-top: 24px;
+		}
+		.card-titled-shift__inner & {
+			display: flex;
+			flex-direction: column;
+			margin-top: 20px;
+			@media (min-width: $screen-sm) {
+				flex-direction: row;
+				margin-top: 24px;
+			}
+		}
+	}
+	&__title {
+		color: var(--color-brand);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 100%;
+		margin: 0;
+		@media (min-width: $screen-md) {
+			font-size: 16px;
+		}
+	}
+}

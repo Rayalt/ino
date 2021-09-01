@@ -1,0 +1,226 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = false
+block meta
+	title Курсы
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html', mod: 'main-nav__link_active'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html', mod: 'main-nav__link_active'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block content
+	section.section.section_alt
+		.section__inner.courses
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						h1.page-title.courses__title Курсы
+						.courses__filter
+							.courses__filter-item
+								label.courses__filter-label Категория
+								+select([
+									{value: '0', option: 'Все категории'},
+									{value: '1', option: 'Государственное и муниципальное управление и сфера закупок'},
+									{value: '2', option: 'Менеджмент. Управление. Кадры'},
+									{value: '3', option: 'Экономика. Финансы. Страхование'},
+									{value: '4', option: 'Туризм. Гостиничное дело. Логистика'},
+									{value: '5', option: 'Юриспруденция'},
+									{value: '6', option: 'Социальная сфера'},
+									{value: '7', option: 'Педагогическое образование'},
+									{value: '8', option: 'Информационные технологии'},
+									{value: '9', option: 'Прочее'}
+								], 'courses__select')
+							.courses__filter-item
+								label.courses__filter-label Форма обучения
+								+select([
+									{value: '0', option: 'Все'},
+									{value: '1', option: 'Очная'},
+									{value: '2', option: 'Дистанционная'}
+								], 'courses__select')
+							.courses__filter-item
+								label.courses__filter-label Вид программы
+								+select([
+									{value: '0', option: 'Все'},
+									{value: '1', option: 'Повышение квалификации'},
+									{value: '2', option: 'Повышение квалификации'},
+									{value: '3', option: 'Профессиональное обучение'}
+								], 'courses__select')
+			.courses__section
+				.grid
+					.grid__row
+						.grid__col.grid__col_xs-12.grid__col_md-4.grid__col_lg-3
+							h2.courses__list-title Государственное и муниципальное управление и сфера закупок
+						.grid__col.grid__col_xs-12.grid__col_md-8.col-offset__lg-1
+							.courses__list
+								+courses-list([
+									{
+										title: 'Контрактная система в сфере закупок товаров, работ, услуг для государственных и муниципальных нужд (для руководителей)',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '40 академических часов'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Контрактная система в сфере закупок товаров, работ, услуг для государственных и муниципальных нужд (для руководителей)',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Заочная'},
+											{time: 'Объём', info: '40 академических часов'},
+											{time: 'Сроки обучения', info: 'В любое время'}
+										]
+									},
+									{
+										title: 'Контрактная система в сфере закупок товаров, работ, услуг для государственных и муниципальных нужд',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '108 академических часов'},
+											{time: 'Сроки обучения', info: '06.09.2021–23.09.2021'}
+										]
+									},
+									{
+										title: 'Контрактная система в сфере закупок товаров, работ, услуг для государственных и муниципальных нужд',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Заочная'},
+											{time: 'Объём', info: '108 академических часов'},
+											{time: 'Сроки обучения', info: 'В любое время'}
+										]
+									},
+									{
+										title: 'Управление государственными и муниципальными закупками',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '72 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Государственное и муниципальное управление',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '72 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									}
+								])
+			.courses__section
+				.grid
+					.grid__row
+						.grid__col.grid__col_xs-12.grid__col_md-4.grid__col_lg-3
+							h2.courses__list-title Экономика. Финансы. Страхование
+						.grid__col.grid__col_xs-12.grid__col_md-8.col-offset__lg-1
+							.courses__list
+								+courses-list([
+									{
+										title: 'Управление персоналом',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '270 академических часов'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Управление персоналом',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '504 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Менеджмент организации',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '72 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Антикризисное управление',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '72 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Профессиональное управление проектами',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '72 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Кадровое делопроизводство',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '72 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Применение ТРИЗ-технолгий в профессональной деятельности',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '72 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									}
+								])
+			.courses__section
+				.grid
+					.grid__row
+						.grid__col.grid__col_xs-12.grid__col_md-4.grid__col_lg-3
+							h2.courses__list-title Туризм. Гостиничное дело. Логистика
+						.grid__col.grid__col_xs-12.grid__col_md-8.col-offset__lg-1
+							.courses__list
+								+courses-list([
+									{
+										title: 'Гостиничное дело',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '270 академических часов'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									},
+									{
+										title: 'Операционная деятельность в логистике',
+										subtitle: 'Профессиональная переподготовка',
+										rowItem: [
+											{time: 'Форма обучения', info: 'Очная'},
+											{time: 'Объём', info: '504 академических часа'},
+											{time: 'Сроки обучения', info: 'По мере набора группы'}
+										]
+									}
+								])

@@ -1,0 +1,19 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-info)
+
+mixin card-info(items)
+	each item in items
+		.card-info__item
+			h3.card-info__label!= item.label
+			if item.hasPrice === true
+				p.card-info__price!= item.price
+			else if item.hasIcon === true
+				.card-info__descr
+					svg.card-info__icon
+						use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+					p.card-info__text.card-info__text_compressed!= item.text
+			else if item.hasHours === true
+				.card-info__descr
+					p.card-info__number!= item.hours
+					p.card-info__text.card-info__text_compressed!= item.text
+			else
+				p.card-info__text!= item.text

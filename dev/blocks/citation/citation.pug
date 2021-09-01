@@ -1,0 +1,10 @@
+//- Все примеси в этом файле должны начинаться c имени блока (citation)
+
+mixin citation(items)
+	each item in items
+		.citation
+			svg.citation__icon
+				use(xlink:href='img/svgSprite.svg#icon__quote')
+			blockquote.citation__item(cite= item.cite)
+				p.citation__text!= item.citation
+				cite.citation__sign!= item.sign

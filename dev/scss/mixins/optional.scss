@@ -1,0 +1,16 @@
+.string-breaker {
+	@media (min-width: $screen-sm) {
+		display: none;
+	}
+}
+.swiper-pagination-bullet {
+	background: var(--color-dark-ninja);
+	opacity: 1;
+}
+.swiper-pagination-bullet-active {
+	background: var(--color-brand);
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}

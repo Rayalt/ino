@@ -1,0 +1,97 @@
+// В этом файле должны быть стили для БЭМ-блока card-apply, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-apply {
+	display: grid;
+	grid-gap: 16px;
+	position: relative;
+	z-index: 2;
+	@media (min-width: $screen-nexus) {
+		grid-auto-rows: 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (min-width: $screen-sm) {
+		grid-gap: 24px;
+	}
+	@media (min-width: $screen-md) {
+		grid-gap: 32px;
+	}
+	@media (min-width: $screen-lg) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	&__item {
+		background-color: var(--color-white);
+		border-radius: 24px;
+		box-shadow: var(--drop-shadow-card);
+		color: var(--color-dark-primary);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 16px;
+		position: relative;
+		text-decoration: none;
+		transition: box-shadow .25s ease, transform .25s ease;
+		@media (min-width: $screen-sm) {
+			padding: 24px;
+		}
+		&:hover {
+			box-shadow: var(--drop-shadow-card-hover);
+			transform: translateY(-2px);
+		}
+		&:nth-of-type(2) {
+			z-index: 3;
+		}
+		&:nth-of-type(3) {
+			z-index: 4;
+		}
+		&:nth-of-type(4) {
+			z-index: 5;
+		}
+	}
+	&__label {
+		margin-bottom: auto;
+		padding-left: 16px;
+		&_blue {
+			border-left: 2px solid var(--color-brand);
+		}
+		&_green {
+			border-left: 2px solid var(--color-green);
+		}
+		&_orange {
+			border-left: 2px solid var(--color-orange);
+		}
+		&_red {
+			border-left: 2px solid var(--color-red);
+		}
+	}
+	&__label-title {
+		color: var(--color-dark-secondary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		line-height: 115%;
+		margin: 0;
+	}
+	&__label-text {
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 120%;
+		letter-spacing: 0.01em;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		margin: 0;
+	}
+	&__header {
+		margin-top: 22px;
+		@media (min-width: $screen-sm) {
+			margin-top: 42px;
+		}
+	}
+	&__descr {
+		margin-top: 20px;
+		@media (min-width: $screen-sm) {
+			margin-top: 40px;
+		}
+	}
+}

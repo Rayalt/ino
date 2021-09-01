@@ -1,0 +1,49 @@
+// В этом файле должны быть стили для БЭМ-блока about, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.about {
+	&__title {
+		margin: 0;
+	}
+	&__descr {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 175%;
+		margin: 16px 0 0 0;
+		@media (min-width: $screen-sm) {
+			line-height: 170%;
+		}
+		@media (min-width: $screen-md) {
+			font-size: 16px;
+			line-height: 175%;
+			margin-top: 24px;
+		}
+		@media (min-width: $screen-lg) {
+			line-height: 200%;
+			margin-top: 32px;
+		}
+	}
+	&__logo {
+		align-items: center;
+		background-color: var(--color-white);
+		border-radius: 24px;
+		border: 1px solid var(--color-brand-pale);
+		display: none;
+		justify-content: center;
+		margin-top: 24px;
+		padding: 31px 23px;
+		@media (min-width: $screen-md) {
+			display: flex;
+		}
+		@media (min-width: $screen-lg) {
+			margin-top: 16px;
+		}
+		svg {
+			height: 48px;
+			width: 100%;
+		}
+	}
+}

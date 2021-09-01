@@ -1,0 +1,19 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-courses)
+
+mixin card-courses(items)
+	.card-courses
+		each item in items
+			a.card-courses__item(href= item.href)
+				.card-courses__cover
+					img.card-courses__img(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@2.jpg 2x' alt!= item.img)
+					.card-courses__pill
+						p.pill.pill_white!= item.pill
+				.card-courses__content
+					.card-courses__header.card-header
+						h2.card-header__title!= item.title
+						p.card-header__subtitle!= item.subtitle
+					.card-courses__body
+						each row in item.row
+							.card-courses__descr.card-descr
+								h3.card-descr__title!= row.time
+								p.card-descr__text!= row.info

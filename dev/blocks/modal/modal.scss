@@ -1,0 +1,139 @@
+// В этом файле должны быть стили для БЭМ-блока modal, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.modal {
+	background: var(--color-white);
+	border-radius: 12px;
+	box-shadow: var(--drop-shadow-card);
+	width: calc(100% - 32px);
+	@media (min-width: $screen-nexus) {
+		border-radius: 16px;
+	}
+	@media (min-width: $screen-sm) {
+		border-radius: 24px;
+		width: 736px;
+	}
+	@media (min-width: $screen-md) {
+		width: 800px;
+	}
+	&_small {
+		max-width: 344px;
+	}
+	&__header {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding: 16px 24px 0 24px;
+		@media (min-width: $screen-nexus) {
+			padding: 24px 32px 0 32px;
+		}
+		@media (min-width: $screen-sm) {
+			padding: 32px 40px 0 40px;
+		}
+		&_centered {
+			justify-content: center;
+			text-align: center;
+		}
+	}
+	&__body {
+		padding: 24px;
+		@media (min-width: $screen-nexus) {
+			padding: 24px 32px 32px 32px;
+		}
+		@media (min-width: $screen-sm) {
+			padding: 24px 40px 40px 40px;
+		}
+		&_centered {
+			display: flex;
+			justify-content: center;
+		}
+	}
+	&__title {
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		line-height: 133%;
+		margin: 0;
+		@media (min-width: $screen-nexus) {
+			font-size: 24px;
+		}
+	}
+	&__close {
+		cursor: pointer;
+		fill: var(--color-dark-primary);
+		height: 24px;
+		margin-left: 16px;
+		width: 24px;
+		@media (min-width: $screen-nexus) {
+			height: 32px;
+			width: 32px;
+		}
+	}
+	&__form {}
+	&__grid {
+		display: grid;
+		grid-gap: 16px;
+		@media (min-width: $screen-nexus) {
+			grid-gap: 24px;
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (min-width: $screen-sm) {
+			grid-gap: 32px;
+		}
+		& + & {
+			margin-top: 16px;
+		}
+	}
+	&__grid-col {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__captcha {
+		border-radius: 12px;
+		border: 2px solid var(--color-brand-pale);
+		color: var(--color-dark-ninja);
+		font-size: 48px;
+		font-weight: 400;
+		line-height: 100%;
+		margin-top: 24px;
+		padding: 10px;
+		text-align: center;
+	}
+	&__button {
+		margin-top: 24px;
+		display: flex;
+		justify-content: center;
+		@media (min-width: $screen-nexus) {
+			margin-top: 40px;
+		}
+	}
+	&__info {
+		@include style-500-14-115p-1p;
+		color: var(--color-dark-secondary);
+		display: inline-block;
+		font-size: 12px;
+		line-height: 150%;
+		margin-top: 16px;
+		@media (min-width: $screen-nexus) {
+			margin-top: 24px;
+		}
+	}
+	&__link {
+		@include style-500-14-115p-1p;
+		box-shadow: inset 0 -1px 0 var(--color-dark-primary);
+		color: var(--color-dark-primary);
+		font-size: 12px;
+		text-decoration: none;
+		transition: box-shadow .25s ease;
+		&:hover {
+			box-shadow: none;
+		}
+	}
+}
+
+.hystmodal__shadow {
+	background: var(--color-darker-tint);
+}

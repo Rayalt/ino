@@ -1,0 +1,10 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-actions)
+
+mixin card-actions(items)
+	.card-actions
+		each item in items
+			a.card-actions__item(href= item.href class= item.isMainCard ? 'card-actions__item_main' : '')
+				.card-actions__pill
+					p.pill(class='pill_' + item.pillColor)!= item.pill
+				.card-actions__content
+					h2.card-actions__title!= item.title

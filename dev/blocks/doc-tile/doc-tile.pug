@@ -1,0 +1,18 @@
+//- Все примеси в этом файле должны начинаться c имени блока (doc-tile)
+
+mixin doc-tile(items, mod)
+	- mod = mod || ''
+	each item in items
+		a.doc-tile(class= mod href= item.href download)
+			if item.hasImg === true
+				.doc-tile__imgs
+					each imgs in item.imgs
+						img.doc-tile__img(src='img/img__' + imgs.img + '_@1.jpg' srcset='img/img__' + imgs.img + '_@2.jpg 2x' alt!= imgs.alt)
+			.doc-tile__content
+				svg.doc-tile__icon-file
+					use(xlink:href='img/svgSprite.svg#icon__file_pdf')
+				.doc-tile__info
+					p.doc-tile__title!= item.title
+					p.doc-tile__descr!= item.descr
+				svg.doc-tile__icon-download
+					use(xlink:href='img/svgSprite.svg#icon__download')

@@ -1,0 +1,42 @@
+// В этом файле должны быть стили для БЭМ-блока button, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.button {
+	@include style-button-700-16-100p-1p;
+	appearance: none;
+	background: var(--color-gradient);
+	background-size: 200% 100%;
+	background-position: 0 0;
+	border: none;
+	border-radius: 32px;
+	color: var(--color-white);
+	cursor: pointer;
+	display: block;
+	outline: none;
+	padding: 16px 64px;
+	text-align: center;
+	text-decoration: none;
+	transition: background .25s ease, background-size .25s ease, background-position .25s ease;
+	&:hover {
+		background: var(--color-gradient);
+		background-size: 200% 100%;
+		background-position: 100% 0;
+	}
+	&_large {
+		font-size: 20px;
+		line-height: 120%;
+		@media (min-width: $screen-nexus) {
+			width: 304px;
+		}
+	}
+	&_inverted {
+		background: var(--color-white);
+		color: var(--color-brand);
+		transition: transform .25s ease;
+		&:hover {
+			background: var(--color-white);
+			transform: translateY(-2px);
+		}
+	}
+}

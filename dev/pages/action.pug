@@ -1,0 +1,152 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = false
+block meta
+	title Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+
+block content
+	section.section.header-body
+		.header-body__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+						+header-body([
+							{
+								title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразова&shy;тельной школе',
+								descr: 'Видео-лекция',
+								hasIcon: true,
+								icon: 'video',
+								img: 'action-1'
+							}
+						])
+	section.section
+		.grid
+			.grid__row
+				.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+					.card-titled-shift
+						.card-titled-shift__inner
+							+card-titled('Эксперт:')
+								+speaker([
+									{
+										hasImg: true,
+										img: 'idiatullin',
+										name: '<strong>Идиатуллин</strong> Артур Вагизович',
+										descr: 'кандидат исторических наук, доцент, руководитель программ профессионального развития работников образования ИНО УВО «Университет управления «ТИСБИ»'
+									}
+								])
+	section.section.section_alt.action
+		.action__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12.grid__col_lg-10.col-offset__lg-1
+						.action__row
+							.action__cols-info
+								.action__text-group
+									p.action__text Одним из основных лицензионных требований к образовательной организации при осуществлении образовательной деятельности является наличие педагогических работников, обладающих соответствующей квалификацией для осуществления образовательной деятельности по всем реализуемым образовательным программам.
+									p.action__text В связи с внедрением Профессионального стандарта «Педагог» произошли изменения в требованиях к кадровым условиям реализации. Давайте разберёмся как не совершить ошибок при приеме педагога на работу.
+								.action__side-card
+									+card-no-title([
+										{
+											label: 'Условия участия',
+											text: 'Бесплатно'
+										},
+										{
+											hasIcon: true,
+											icon: 'diploma',
+											label: 'Вы получаете',
+											text: 'Сертификат установленного образца в электронной форме'
+										}
+									])
+										
+						.action__row
+							h2.action__title На лекции вы узнаете
+							ul.action__list
+								li.action__list-item Основные ошибки, выявляемые лицензионным контролем при анализе кадровых условий реализации программ;
+								li.action__list-item Новые требования профессиональных стандартов и особенности приема на работу студентов старших курсов;
+								li.action__list-item Способы оптимизации профессионального переобучения педагогического коллектива;
+						.action__row
+							.action__bonus
+								svg.action__bonus-icon
+									use(xlink:href='img/svgSprite.svg#icon__warning')
+								.action__bonus-wrap
+									h2.action__bonus-title Бонус
+									p.action__bonus-descr Вы получите доступ на скачивание шаблонов локальных актов
+						.action__row
+							h2.action__title Как это работает
+							.action__cols-how
+								.action__steps
+									+steps([
+										{descr: 'Вы проходите регистрацию в форме регистрации справа'},
+										{descr: 'На указанный вами адрес электронной почты будет направлена ссылка с видео-лекцией'},
+										{descr: 'По окончании просмотра лекции перейдите по ссылке «Скачать сертификат»'}
+									])
+								form.action__form
+									.action__form-grid
+										.action__field
+											+field([
+												{
+													label: 'Фамилия',
+													placeholder: '',
+													type: 'text',
+													value: 'Пушкин',
+													required: true
+												},
+												{
+													label: 'Имя',
+													placeholder: '',
+													type: 'text',
+													value: 'Александр',
+													required: true
+												},
+												{
+													label: 'Отчество <span>(не обязательно)</span>',
+													placeholder: '',
+													type: 'text',
+													value: 'Сергеевич'
+												}
+											])
+										.action__field
+											+field([
+												{
+													label: 'Почта',
+													placeholder: '_@_',
+													type: 'email',
+													value: 'pushkin@mail.ru',
+													required: true
+												},
+												{
+													label: 'Должность',
+													placeholder: '',
+													type: 'text',
+													value: 'Поэт'
+												}
+											])
+									.action__form-button
+										button.button(data-hystmodal='#applyAccepted') Подать заявку
+									small.action__info
+										| Этот сайт защищён reCAPTCHA и использует 
+										a.action__link(href='https://policies.google.com/privacy') Политику конфиденциальности
+										|  и 
+										a.action__link(href='https://policies.google.com/terms') Условия использования
+										|  Google

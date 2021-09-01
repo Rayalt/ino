@@ -1,0 +1,323 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- var isMainPage = true
+block meta
+	title Главная страница
+
+block header-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+	
+block side-nav
+	+main-nav([
+		{link: 'Курсы', href: 'courses.html'},
+		{link: 'О нас', href: 'about.html'},
+		{link: 'Блог', href: 'blog.html'},
+		{link: 'Набор', href: 'recruitment.html'},
+		{link: 'Акции', href: 'actions.html'},
+		{link: 'Контакты', href: 'about.html#contacts'}
+	])
+	
+block content
+	section.section.hero
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						h1.hero__heading Институт непрерывного образования
+						h2.hero__subtitle Университет управления «ТИСБИ»
+						p.hero__descr Программы дополнительного образования для начинающих и практикующих специалистов: повышение квалификации, профессиональная переподготовка и общеразвивающие программы для взрослых.
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-8.col-offset__md-2
+						.hero__search
+							h2.hero__search-title Найти курс по названию:
+							form.hero__form
+								.input.hero__input
+									input.input__search(placeholder='Введите название курса' type='search')
+	section.section
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						.section__header
+							h2.section-title.section__title Самые популярные курсы
+							a.section__button(href='courses.html')
+								span Все курсы
+								svg.section__button-icon
+									use(xlink:href='/img/svgSprite.svg#icon__shevron_right')
+						.section__body
+							+card-courses([
+								{
+									href: 'course.html',
+									img: 'state',
+									pill: 'Дистанционное',
+									title: 'Управление государственными и муниципальными закупками',
+									subtitle: 'Профессиональная переподготовка',
+									row: [{time: 'Объём', info: '254 академических часа'}, {
+										time: 'Сроки обучения',
+										info: 'По мере набора группы'
+									}]
+								},
+								{
+									href: 'course_2.html?tab=1',
+									img: 'purchases',
+									pill: 'Очное',
+									title: 'Контрактная система в сфере закупок',
+									subtitle: 'Профессиональная переподготовка',
+									row: [{time: 'Объём', info: '254 академических часа'}, {
+										time: 'Сроки обучения',
+										info: 'В любое время'
+									}]
+								},
+								{
+									href: 'course_2.html?tab=2',
+									img: 'management',
+									pill: 'Дистанционное',
+									title: 'Контрактная система в сфере закупок',
+									subtitle: 'Профессиональная переподготовка',
+									row: [{time: 'Объём', info: '254 академических часа'}, {
+										time: 'Сроки обучения',
+										info: 'В любое время'
+									}]
+								},
+								{
+									href: '#',
+									img: 'investments',
+									pill: 'Очное',
+									title: 'Реализация требований ФГОС ДО и профессионального стандарта «Педагог» в деятельности воспитателя при организации основных видов деятельности детей дошкольного возраста с ОВЗ',
+									subtitle: 'Профессиональная переподготовка',
+									row: [{time: 'Объём', info: '254 академических часа'}, {
+										time: 'Сроки обучения',
+										info: 'В любое время'
+									}]
+								}
+							])
+	section.section
+		.section__inner-incut
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-8.grid__col_lg-6
+						.incut
+							.incut__content
+								h2.incut__heading Заголовок секции, текст предложения
+								h3.incut__subtitle Возможно подзаголовок
+								p.incut__descr Прежде всего, социально-экономическое развитие создаёт предпосылки для существующих финансовых и административных условий. Есть над чем задуматься: элементы политического процесса обнародованы.
+								.incut__button
+									a.button.button_large(href='#') Сделать хорошо
+							img.incut__img(src='/img/img__incut_@1.jpg' srcset='/img/img__incut_@2.jpg 2x' alt='')
+					
+	section.section
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						.section__header
+							h2.section-title.section__title Идёт набор
+							a.section__button(href='recruitment.html')
+								span Все предложения
+								svg.section__button-icon
+									use(xlink:href='/img/svgSprite.svg#icon__shevron_right')
+						.section__body
+							+card-apply([
+								{
+									href: 'course.html',
+									labelTitle: 'Сроки обучения',
+									labelColor: 'blue',
+									labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+									title: 'Управление государственными и муниципальными закупками',
+									subtitle: 'Профессиональная переподготовка',
+									time: 'Объём',
+									info: '254 академических часа'
+								},
+								{
+									href: 'course_2.html',
+									labelTitle: 'Сроки обучения',
+									labelColor: 'red',
+									labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+									title: 'Контрактная система в сфере закупок',
+									subtitle: 'Профессиональная переподготовка',
+									time: 'Объём',
+									info: '254 академических часа'
+								},
+								{
+									href: '#',
+									labelTitle: 'Сроки обучения',
+									labelColor: 'green',
+									labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+									title: 'Менеджмент в образовании',
+									subtitle: 'Профессиональная переподготовка',
+									time: 'Объём',
+									info: '254 академических часа'
+								},
+								{
+									href: '#',
+									labelTitle: 'Сроки обучения',
+									labelColor: 'orange',
+									labelText: [{text: '16.09.2021'}, {text: '27.11.2021'}],
+									title: 'Управление инвестиционными проектами на предприятии',
+									subtitle: 'Профессиональная переподготовка',
+									time: 'Объём',
+									info: '254 академических часа'
+								}
+							])
+	section.section
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						h2.section-title.section__title Категории курсов
+						.section__body
+							+card-categories([
+								{
+									title: 'Государственное и муниципальное управление и сфера закупок',
+									info: '5 курсов',
+									icon: 'management'
+								},
+								{
+									title: 'Менеджмент. Управление. Кадры',
+									info: '4 курса',
+									icon: 'struct'
+								},
+								{
+									title: 'Экономика. Финансы. Страхование',
+									info: '5 курсов',
+									icon: 'economy'
+								},
+								{
+									title: 'Туризм. Гостиничное дело. Логистика',
+									info: '1 курс',
+									icon: 'globe'
+								},
+								{
+									title: 'Юриспруденция',
+									info: '2 курса',
+									icon: 'law'
+								},
+								{
+									title: 'Социальная сфера',
+									info: '2 курса',
+									icon: 'social'
+								},
+								{
+									title: 'Психология и коммуникации',
+									info: '1 курс',
+									icon: 'communications'
+								},
+								{
+									title: 'Педагогическое образование',
+									info: '4 курса',
+									icon: 'teacher'
+								},
+								{
+									title: 'Информационные технологии',
+									info: '5 курсов',
+									icon: 'it'
+								},
+								{
+									title: 'Прочее',
+									info: '15 курсов',
+									icon: 'others'
+								}
+							])
+	section.section
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						.section__header
+							h2.section-title.section__title Акции
+							a.section__button(href='actions.html')
+								span Все предложения
+								svg.section__button-icon
+									use(xlink:href='/img/svgSprite.svg#icon__shevron_right')
+						.section__body
+							+card-actions([
+								{
+									isMainCard: true,
+									href: 'action.html',
+									pillColor: 'red',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'blue',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'orange',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'green',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								},
+								{
+									href: 'action.html',
+									pillColor: 'red',
+									pill: 'Сертификат',
+									title: 'Соблюдение требований профессионального стандарта «Педагог» в части кадрового обеспечения реализации программ ФГОС в общеобразовательной школе'
+								}
+							])
+	section.section
+		.section__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xs-12.grid__col_md-12
+						.section__header
+							h2.section-title.section__title Советы и тренды
+							a.section__button(href='blog.html')
+								span Читать в блоге
+								svg.section__button-icon
+									use(xlink:href='/img/svgSprite.svg#icon__shevron_right')
+						.section__body
+							+card-blog([
+								{
+									href: '#',
+									img: 'blog-1',
+									pill: 'Формула бренда',
+									icon: 'video',
+									pillColor: 'red',
+									title: 'Кстати, ключевые особенности структуры проекта',
+									descr: 'Превозмогая сложившуюся непростую экономическую ситуацию, объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую Превозмогая сложившуюся непростую экономическую ситуацию, объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую'
+								},
+								{
+									href: '#',
+									img: 'blog-2',
+									pill: 'Интервью',
+									icon: 'video',
+									pillColor: 'orange',
+									title: 'Не следует, однако, забывать, что экономическая повестка',
+									descr: 'Сегодняшнего дня не оставляет шанса для распределения внутренних для распределения внутренних объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую Превозмогая сложившуюся непростую экономическую ситуацию, объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую'
+								},
+								{
+									href: '#',
+									img: 'blog-3',
+									pill: 'Статьи',
+									icon: '',
+									pillColor: 'green',
+									title: 'Являясь всего лишь частью общей картины ресурсов',
+									descr: 'Хотя само их существование приносит несомненную пользу обществу их существование приносит объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую Превозмогая сложившуюся непростую экономическую ситуацию, объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую'
+								},
+								{
+									href: '#',
+									img: 'blog-4',
+									pill: 'Формула бренда',
+									icon: '',
+									pillColor: 'red',
+									title: 'Жаждут быть превращены в посмешище',
+									descr: 'Интерактивные прототипы и по сей день остаются уделом либералов, которые остаются уделом либералов объявлены    сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую Превозмогая сложившуюся непростую экономическую ситуацию, объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую объявлены сложившуюся непростую экономическую'
+								}
+							])

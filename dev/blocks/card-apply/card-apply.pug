@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-apply)
+
+mixin card-apply(items)
+	.card-apply
+		each item in items
+			a.card-apply__item(href= item.href)
+				.card-apply__label(class='card-apply__label_' + item.labelColor)
+					h2.card-apply__label-title!= item.labelTitle
+					each labelText in item.labelText
+						p.card-apply__label-text!= labelText.text
+				.card-apply__header.card-header
+					h3.card-header__title!= item.title
+					p.card-header__subtitle!= item.subtitle
+				.card-apply__descr.card-descr
+					h3.card-descr__title!= item.time
+					p.card-descr__text!= item.info

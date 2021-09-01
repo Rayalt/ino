@@ -1,0 +1,127 @@
+// В этом файле должны быть стили для БЭМ-блока doc-tile, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.doc-tile {
+	background-color: var(--color-white);
+	border-radius: 16px;
+	border: 1px solid var(--color-brand-pale);
+	box-shadow: var(--drop-shadow-card);
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+	position: relative;
+	text-decoration: none;
+	transition: transform .25s ease, box-shadow .25s ease;
+	@media (min-width: $screen-md) {
+		border-radius: 8px;
+		margin-top: 24px;
+	}
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--drop-shadow-card-hover);
+	}
+	&:nth-of-type(1) {
+		z-index: 2;
+	}
+	&:nth-of-type(2) {
+		z-index: 3;
+	}
+	&:nth-of-type(3) {
+		z-index: 4;
+	}
+	&:nth-of-type(4) {
+		z-index: 5;
+	}
+	& + & {
+		margin-top: 16px;
+	}
+	.action__documents &:first-of-type {
+		margin-top: 0;
+	}
+	&_main {
+		margin-top: 32px;
+		@media (min-width: $screen-sm) {
+			margin-top: 24px;
+		}
+		@media (min-width: $screen-md) {
+			border-radius: 24px;
+			margin-top: 32px;
+		}
+	}
+	&__imgs {
+		align-items: center;
+		display: none;
+		padding: 7px 13px 1px 3px;
+		@media (min-width: $screen-nexus) {
+			display: flex;
+		}
+		@media (min-width: $screen-md) {
+			padding: 7px 10px 1px 7px;
+		}
+	}
+	&__img {
+		height: auto;
+		max-width: 100%;
+		width: 33.333%;
+		& + & {
+			@media (min-width: $screen-nexus) {
+				margin-left: 4px;
+			}
+			@media (min-width: $screen-lg) {
+				margin-left: 16px;
+			}
+		}
+	}
+	&__content {
+		display: flex;
+		padding: 15px;
+		@media (min-width: $screen-sm) {
+			padding: 15px 19px;
+		}
+		@media (min-width: $screen-md) {
+			padding: 15px 19px 15px 11px;
+		}
+	}
+	&__icon-file {
+		display: block;
+		flex-shrink: 0;
+		height: 40px;
+		margin-right: 12px;
+		width: 40px;
+	}
+	&__info	{
+		margin-right: 12px;
+	}
+	&__title {
+		color: var(--color-dark-primary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		line-height: 115%;
+		margin: 0;
+	}
+	&__descr {
+		color: var(--color-dark-secondary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 167%;
+		margin: 4px 0 0 0;
+	}
+	&__icon-download {
+		display: none;
+		fill: var(--color-dark-primary);
+		flex-shrink: 0;
+		height: 32px;
+		margin: auto 0 auto auto;
+		position: relative;
+		width: 32px;
+		@media (min-width: $screen-nexus) {
+			display: block;
+		}
+	}
+}

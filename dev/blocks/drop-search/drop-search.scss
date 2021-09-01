@@ -1,0 +1,64 @@
+// В этом файле должны быть стили для БЭМ-блока drop-search, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.drop-search {
+	box-shadow: var(--drop-shadow-card);
+	background-color: var(--color-white);
+	border: 1px solid var(--color-dark-ninja);
+	border-radius: 16px;
+	list-style: none;
+	margin: 0;
+	max-height: 180px;
+	-webkit-overflow-scrolling: touch;
+	overflow: hidden;
+	overflow-y: auto;
+	padding: 0;
+	position: absolute;
+	text-align: left;
+	top: calc(100% + 4px);
+	width: 100%;
+	z-index: 96;
+	&__loader {
+		align-items: center;
+		display: flex;
+		height: 52px;
+		justify-content: center;
+		overflow: hidden;
+		padding: 0 23px;
+	}
+	&__message {
+		color: var(--color-dark-secondary);
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		padding: 15px 23px;
+		text-align: center;
+	}
+	&__item + &__item {
+		box-shadow: inset 0 1px 0 var(--color-dark-ninja);;
+	}
+	&__link {
+		color: var(--color-dark-primary);
+		display: block;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 125%;
+		padding: 16px 23px;
+		text-decoration: none;
+		transition: background-color .2s ease;
+		&:hover {
+			background-color: var(--color-brand-pale);
+		}
+		.drop-search__item:first-of-type & {
+			padding-top: 15px;
+		}
+		.drop-search__item:last-of-type & {
+			padding-bottom: 15px;
+		}
+	}
+}

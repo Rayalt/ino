@@ -1,0 +1,17 @@
+// В этом файле должны быть стили для БЭМ-блока section-title, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.section-title {
+	font-feature-settings: 'pnum' on, 'lnum' on;
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	line-height: 100%;
+	@media (min-width: $screen-sm) {
+		font-size: 24px;
+	}
+	@media (min-width: $screen-md) {
+		font-size: 32px;
+	}
+}

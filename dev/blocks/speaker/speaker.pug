@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (speaker)
+
+mixin speaker(items)
+	each item in items
+		if item.hasImg === true
+			.speaker
+				.speaker__inner
+					.speaker__avatar
+						img.speaker__img(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@2.jpg 2x' alt!= item.alt)
+					.speaker__info
+						h3.speaker__name!= item.name
+						p.speaker__descr!= item.descr
+		else
+			.speaker
+				h3.speaker__name!= item.name
+				p.speaker__descr!= item.descr

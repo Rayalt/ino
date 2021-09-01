@@ -1,0 +1,7 @@
+//- Все примеси в этом файле должны начинаться c имени блока (select)
+
+mixin select(items, addClass)
+	- addClass = addClass || ''
+	select.select
+		each item in items
+			option(value= item.value)!= item.option

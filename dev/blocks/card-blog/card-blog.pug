@@ -1,0 +1,18 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-blog)
+
+mixin card-blog(items)
+	.card-blog
+		each item in items
+			a.card-blog__item(href= item.href)
+				.card-blog__cover
+					img.card-blog__img(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@2.jpg 2x' alt!= item.title)
+					.card-blog__pill
+						p.pill(class='pill_' + item.pillColor)!= item.pill
+						if item.icon !== ''
+							.card-blog__icon
+								svg
+									use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+				.card-blog__content
+					h2.card-blog__title!= item.title
+					.card-blog__descr
+						p.card-blog__text-truncate(data-tuncate)!= item.descr

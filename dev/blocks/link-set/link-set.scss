@@ -1,0 +1,50 @@
+// В этом файле должны быть стили для БЭМ-блока link-set, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.link-set {
+	align-items: flex-start;
+	display: grid;
+	grid-gap: 16px;
+	&__item {
+		display: flex;
+	}
+	&__icon {
+		fill: var(--color-dark-primary);
+		flex-shrink: 0;
+		height: 24px;
+		margin: 6px 8px 0 0;
+		width: 24px;
+	}
+	&__inner {
+		align-items: flex-start;
+		display: flex;
+		flex-wrap: wrap;
+		margin: -4px;
+	}
+	&__link {
+		@include style-600-16-125p-1p;
+		background: var(--color-brand-pale);
+		border-radius: 32px;
+		color: var(--color-brand);
+		cursor: pointer;
+		display: block;
+		margin: 4px;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background .25s ease, transform .25s ease;
+		&:hover {
+			background: var(--color-brand-ghost);
+			.link-set_white & {
+				background: var(--color-white);
+				transform: translateY(-2px);
+			}
+		}
+		& span {
+			color: var(--color-dark-quaternary);
+		}
+		.link-set_white & {
+			background: var(--color-white);
+		}
+	}
+}

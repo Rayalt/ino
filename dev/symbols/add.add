@@ -1,0 +1,7 @@
+<view id="icon__shevron_down-view" viewBox="0 0 24 24" />
+<view id="icon__cross-view" viewBox="0 24 24 24" />
+<view id="icon__shevron_right-view" viewBox="0 48 24 24" />
+
+<use xlink:href="#icon__shevron_down" style="fill:#4b4d52" width="24" height="24" x="0" y="0" id="shevron_down"></use>
+<use xlink:href="#icon__cross" style="fill:#8d9199" width="24" height="24" x="0" y="24" id="cross"></use>
+<use xlink:href="#icon__shevron_right" style="fill:#4b4d52" width="24" height="24" x="0" y="48" id="shevron_right"></use>

@@ -1,0 +1,26 @@
+header.header
+	.grid
+		.grid__row
+			.grid__col.grid__col_xs-12.grid__col_md-12
+				.header__inner
+					if isMainPage === true
+						.header__logo
+							svg
+								use(xlink:href='/img/svgSprite.svg#ino__logo')
+					else
+						a.header__logo(href='index.html')
+							svg
+								use(xlink:href='/img/svgSprite.svg#ino__logo')
+					.header__phones
+						+link-set([
+							{icon: '', link: [
+								{href: 'tel:88432948330', text: '(843) 294-83-30'},
+								{href: 'tel:88432948332', text: '294-83-32'},
+								{href: 'tel:88432948337', text: '294-83-37'}
+							]}
+						])
+					.header__nav
+						block header-nav
+					.header__menu
+						svg
+							use(xlink:href='/img/svgSprite.svg#icon__menu')

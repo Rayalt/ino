@@ -1,0 +1,15 @@
+//- Все примеси в этом файле должны начинаться c имени блока (pagination)
+
+mixin pagination
+	.pagination
+		span.pagination__item.pagination__item_disabled
+			svg.pagination__icon
+				use(xlink:href='img/svgSprite.svg#icon__shevron_right')
+		span.pagination__item.pagination__item_active 1
+		a.pagination__item(href='#') 2
+		span.pagination__item.pagination__item_static ...
+		a.pagination__item(href='#') 9
+		a.pagination__item(href='#') 10
+		a.pagination__item(href='#')
+			svg.pagination__icon
+				use(xlink:href='img/svgSprite.svg#icon__shevron_right')

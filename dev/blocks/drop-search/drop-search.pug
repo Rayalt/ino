@@ -1,0 +1,7 @@
+//- Все примеси в этом файле должны начинаться c имени блока (drop-search)
+
+mixin drop-search(items)
+	ul.drop-search
+		each item in items
+			li.drop-search__item
+				a.drop-search__link(href= item.href)!= item.link
